@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html class="html" lang="en-GB">
+ <head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+  <title>Sumasika</title>
+  <!-- CSS -->
+  <link href='http://fonts.googleapis.com/css?family=Raleway:500,700,100,400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  
+ <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %> 
+  <%binding.pry %>
+  <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+  <script src="scripts/html5shiv.js?4241844378" type="text/javascript"></script>
+  <![endif]-->
+    <!--HTML Widget code-->
+  
+			<!--[if gte IE 8] -->
+				<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+			<!-- <![endif]-->
+			<!--[if IE 7]>
+				<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
+			<![endif]-->
+			<style>
+				.icon-block:before, .icon-block {
+					display: block;
+				}
+			</style>
+		
+ </head>
+ <body>
+	
+	  <%= yield %>
+	  <%= render :partial => 'layouts/footer' %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+ </body>
+</html>
