@@ -2,6 +2,6 @@
 
 class RegistrationsController < ApplicationController
   def fresher
-  	
+
   end
 end

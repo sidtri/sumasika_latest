@@ -1,5 +1,7 @@
 class ChargesController < ApplicationController
-	def new
+	layout 'dashboard'
+	def index
+
 	end
 
 	def create

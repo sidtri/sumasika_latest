@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   
 
-  
-  # Signup Routes
+ # Signup Routes
   get 'members/index'
   get 'members/new'
   post 'members/create'

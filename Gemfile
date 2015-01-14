@@ -46,4 +46,4 @@ end
 gem 'bcrypt'
 gem 'pry'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-#gem 'dalli'
+

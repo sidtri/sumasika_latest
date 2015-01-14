@@ -58,20 +58,22 @@
    <div class="row">
      <div class="col-xs-2">
        <ul id="dashboard-menu">
-       <li>                
-           <a href="#">
-           <i class="icon-home"></i>
-           <span>Home</span>
-           </a>
-       </li>            
-       <li class="active">
-           <a href="#">
-           <i class="icon-signal"></i>
-           <span>Charts</span>
-           </a>
-       </li>
-       </ul>
-     </div>    
+          <ul class="nav" style="height:25em;"><!-- 'tabs-right' for right tabs -->
+                <li>
+                  <a href="#home" style=" border-bottom: 1px solid #E6E6E6;">
+                    <span class="glyphicon glyphicon-random" style="padding-right:10px;"></span><span>Send Money</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#profile" style="border-bottom: 1px solid #E6E6E6;">
+                    <span class="glyphicon glyphicon-repeat" style="padding-right: 10px;"></span><span>Transactions</span>
+                  </a>
+                </li>
+                <li><a href="#messages" style=" border-bottom: 1px solid #E6E6E6;">
+                  <span class="glyphicon glyphicon-ok"style="padding-right: 10px;"></span><span>Verification</span></a></li>
+                <li><a href="#settings" ><span class="glyphicon glyphicon-cog" style="padding-right: 10px;"></span><span>Settings</span></a></li>
+          </ul>
+       </div>    
      <div class="col-xs-10">
  		<div class="well">
  			<%= yield %>      
