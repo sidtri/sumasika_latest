@@ -47,3 +47,5 @@ gem 'bcrypt'
 gem 'pry'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
+gem 'countries'
+gem 'country_select'

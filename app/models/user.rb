@@ -2,7 +2,8 @@ require 'bcrypt'
 
 class User < ActiveRecord::Base
  include BCrypt
- 
+ has_one :account
+
  def password
     @password ||= Password.new(password_hash)
  end
