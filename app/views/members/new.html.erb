@@ -1,96 +1,97 @@
 <script src='https://www.google.com/recaptcha/api.js'></script>
-<div class="site_container">
+<div class="site_container" style="margin-top:55px;">
 	<div class="row">
-		<div class="col-xs-12">
-		 <%= form_tag members_create_path do -%>
-			 <div class="form-group">
-			 	<%= label_tag 'exampleInputEmail1', 'Email address' %>
-			    <!-- <label for="exampleInputEmail1">Email address</label> -->
-			    <%= text_field_tag 'email' , "",class: 'form-control' %>
-			    
-			  </div>
-			  <div class="form-group">
-			  	<%= label_tag 'exampleInputPassword1', 'Password' %>
-			    
-			    <%= password_field_tag 'password' , '',class: 'form-control',placeholder: 'Enter password' %>
-			   </div>
-
-			   <div class="form-group">
-			    <%= label_tag 'exampleInputPassword1', 'Select Country' %>
-			  
-			
-			  <%= select_tag(:country,options_for_select([["Afghanistan", 1], ["India", 2]]),{ :class => 'form-control' }) %>
-			    
-			    
-			   </div>
-			    <div class="form-group">
-			    <%= label_tag 'exampleInputPassword1', 'First Name' %>
-			  
-			
-			  <%= text_field_tag 'first_name' , "",class: 'form-control' %>
-			    
-			    
-			   </div>
-			    <div class="form-group">
-			    <%= label_tag 'exampleInputPassword1', 'Last Name' %>
-			  
-			
-			  <%= text_field_tag 'last_name' , "",class: 'form-control' %>
-			    
-			   </div>
-			  <div class="form-group">
-			    <%= label_tag 'exampleInputPassword1', 'Number And Street Address' %>
-			  
-			
-			  <%= text_field_tag 'address' , "",class: 'form-control' %>
-			    
-			   </div>
-			   <div class="form-group">
-			    <%= label_tag 'exampleInputPassword1', 'Town' %>
-			  
-			
-			  <%= text_field_tag 'city' , "",class: 'form-control' %>
-			    
-			   </div>
-			   <div class="form-group">
-			    <%= label_tag 'exampleInputPassword1', 'Post Code' %>
-			  
-			  <%= text_field_tag 'postal' , "",class: 'form-control' %>
-			    
-			   </div>
-			 <div class="form-group">
-			    <%= label_tag 'exampleInputPassword1', 'Date Of Birth' %>
-			  
-			  <%= date_field_tag 'dob' , "",class: 'form-control' %>
-			    
-			   </div>
-			<div class="form-group">
+		<div class="col-xs-6">
+			<div class="row" style="text-align:center; position:fixed;">
 				
-			<div class="g-recaptcha" data-sitekey="6LfVSwATAAAAACc6_aLCbg6fyItZUMF_fwIUNqfP"></div>
+					<h1 class="signuphed">Join Sumasika</h1>
+					<h3 class="signuphed3">or <%= link_to 'Login'%></h3>
+				
 			</div>
+		</div>
+		<div class="col-xs-6">
+		 	<div class="well">
+		 		 <%= form_tag members_create_path do -%>
+		 			 <div class="form-group">
+		 			 	<%= label_tag 'exampleInputEmail1', 'Email address', :style =>'' %>
+		 			    <!-- <label for="exampleInputEmail1">Email address</label> -->
+		 			    <%= text_field_tag 'email' , "",class: 'form-control' %>
+		 			    
+		 			  </div>
+		 			  <div class="form-group">
+		 			  	<%= label_tag 'exampleInputPassword1', 'Password', :style =>''  %>
+		 			    
+		 			    <%= password_field_tag 'password' , '',class: 'form-control',placeholder: 'Enter password' %>
+		 			   </div>
 
-		  <div class="checkbox">
-		    <label>
-		      <input type="checkbox"> I agree to allow Sumasika to confirm the identity information I have submitted.
-		    </label>
-		  </div>
+		 			   <div class="form-group">
+		 			    <%= label_tag 'exampleInputPassword1', 'Select Country' , :style =>''  %>
+		 			  
+		 			
+		 			  <%= select_tag(:country,options_for_select([["Afghanistan", 1], ["India", 2]]),{ :class => 'form-control' }) %>
+		 			    
+		 			    
+		 			   </div>
+		 			    <div class="form-group">
+		 			    <%= label_tag 'exampleInputPassword1', 'First Name', :style =>''  %>
+		 			  
+		 			
+		 			  <%= text_field_tag 'first_name' , "",class: 'form-control' %>
+		 			    
+		 			    
+		 			   </div>
+		 			    <div class="form-group">
+		 			    <%= label_tag 'exampleInputPassword1', 'Last Name', :style =>''  %>
+		 			  
+		 			
+		 			  <%= text_field_tag 'last_name' , "",class: 'form-control' %>
+		 			    
+		 			   </div>
+		 			  <div class="form-group">
+		 			    <%= label_tag 'exampleInputPassword1', 'Number And Street Address', :style =>''  %>
+		 			  
+		 			
+		 			  <%= text_field_tag 'address' , "",class: 'form-control' %>
+		 			    
+		 			   </div>
+		 			   <div class="form-group">
+		 			    <%= label_tag 'exampleInputPassword1', 'Town', :style =>'' %>
+		 			  
+		 			
+		 			  <%= text_field_tag 'city' , "",class: 'form-control' %>
+		 			    
+		 			   </div>
+		 			   <div class="form-group">
+		 			    <%= label_tag 'exampleInputPassword1', 'Post Code',:style =>'' %>
+		 			  
+		 			  <%= text_field_tag 'postal' , "",class: 'form-control' %>
+		 			    
+		 			   </div>
+		 			 <div class="form-group">
+		 			    <%= label_tag 'exampleInputPassword1', 'Date Of Birth',:style =>'' %>
+		 			  
+		 			  <%= date_field_tag 'dob' , "",class: 'form-control' %>
+		 			    
+		 			   </div>
+		 			<div class="form-group">
+		 				
+		 			<div class="g-recaptcha" data-sitekey="6LfVSwATAAAAACc6_aLCbg6fyItZUMF_fwIUNqfP"></div>
+		 			</div>
+
+		 		  <div class="checkbox">
+		 		    <label>
+		 		      <input type="checkbox"> I agree to allow Sumasika to confirm the identity information I have submitted.
+		 		    </label>
+		 		  </div>
 
 
-			<%= submit_tag 'Submit',class: 'btn btn-success',name: 'register' %>
+		 			<%= submit_tag 'Submit',class: 'btn btn-success',name: 'register' %>
 
 
-			  <!-- <button type="submit" class="btn btn-success btn-xl">Submit</button>  -->
-			<% end -%>
+		 			  <!-- <button type="submit" class="btn btn-success btn-xl">Submit</button>  -->
+		 			<% end -%>
+		 	</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-xs-4">
-			<span>Already Registered?</span>
-			<a href="#" class="btn btn-success">Login</a>
-		
-			
-		</div>
-		
-		
-	</div>
+	
 </div>
