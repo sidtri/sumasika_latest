@@ -16,7 +16,8 @@
     <!--HTML Widget code-->
   
 			<!--[if gte IE 8] -->
-				<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+				<!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"> -->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 			<!-- <![endif]-->
 			<!--[if IE 7]>
 				<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
@@ -60,9 +61,15 @@
        <ul id="dashboard-menu">
           <ul class="nav" style="height:25em;"><!-- 'tabs-right' for right tabs -->
                 <li>
-                  <a href="#home" style=" border-bottom: 1px solid #E6E6E6;">
-                    <span class="glyphicon glyphicon-random" style="padding-right:10px;"></span><span>Send Money</span>
-                  </a>
+                  <!-- <a href="#home" style=" border-bottom: 1px solid #E6E6E6;">  </a> -->
+              <% # link_to '<span class="glyphicon glyphicon-random" style="padding-right:10px;"></span>
+             # <span>Send Money</span>' , charges_path , :style => 'border-bottom: 1px solid #E6E6E6' %>
+            
+        <%= link_to charges_path, :style => "border-bottom: 1px solid #E6E6E6;" do %>
+ 
+                  <span class="glyphicon glyphicon-random" style="padding-right:10px;"></span>
+                   <span>Send Money</span>
+        <% end %>
                 </li>
                 <li>
                   <a href="#profile" style="border-bottom: 1px solid #E6E6E6;">

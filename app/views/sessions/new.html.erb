@@ -1,23 +1,31 @@
-<div class="site_container">
-	<div class="row">
-	<div class="col-xs-12">
-		<%=form_tag sessions_create_path, :class => 'form' do |f|   %>
-		 <div class="form-group">
-	     	<%= label_tag 'exampleInputEmail1', 'Email address' %>
-		    <!-- <label for="exampleInputEmail1">Email address</label> -->
-		    <%= text_field_tag 'email' , "",class: 'form-control' %>
-		  </div>
-		  <div class="form-group">
-		    <%= label_tag 'exampleInputPassword1', 'Password' %>
-		    <%= password_field_tag 'password' , '',class: 'form-control',placeholder: 'Enter password' %>
-		  </div>
-		   <%= submit_tag 'Login',class: 'btn btn-success',name: 'login' %>
-		<% end -%>
+<div class="site_container" style="margin-top:55px;">
+	<div class="row" >
+	<div class="col-xs-6">
+		<div class="row" style="text-align:center; position:fixed;">
+		<h1 class="signuphed">Join Sumasika</h1>
+		<h3 class="signuphed3">or <%= link_to 'Signup', members_new_path %></h3>
+		</div>
 	</div>
-	<div class="row">
+	<div class="col-xs-6">
+		<div class="well">
+			<%=form_tag sessions_create_path, :class => 'form' do |f|   %>
+			 <div class="form-group">
+		     	<%= label_tag 'exampleInputEmail1', 'Email address' %>
+			    <!-- <label for="exampleInputEmail1">Email address</label> -->
+			    <%= text_field_tag 'email' , "",class: 'form-control' %>
+			  </div>
+			  <div class="form-group">
+			    <%= label_tag 'exampleInputPassword1', 'Password' %>
+			    <%= password_field_tag 'password' , '',class: 'form-control',placeholder: 'Enter password' %>
+			  </div>
+			   <%= submit_tag 'Login',class: 'btn btn-success',name: 'login' %>
+			<% end -%>
+		</div>
+	</div>
+	<!-- <div class="row">
 		<div class="col-xs-4">
 			<span>Dont Have An Account?</span>
 			<a href="#">Sign up</a>
 		</div>
-	</div>
+	</div> -->
 </div>
