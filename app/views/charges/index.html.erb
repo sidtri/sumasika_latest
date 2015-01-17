@@ -1,14 +1,14 @@
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
   // This identifies your website in the createToken call below
-  Stripe.setPublishableKey('pk_test_kqnIs2hgJxMPfAb89tGIOTg6');
+  Stripe.setPublishableKey('pk_test_4X6lP1CsXRUtODK3q7NPmcr1');
   // ...
 </script>
 
 
 
 
-<div class="panel panel-default" style="height:22em">
+<div class="panel panel-default" style="height:31em">
    <div class="panel-heading">
       <h3 class="panel-title">
           <%= image_tag "stripe-logo.png", :class => 'img-thumbnail', :width => '120px' %>
@@ -24,41 +24,46 @@
       </div>
       <div class="col-xs-9">
             <%= form_tag charges_path, :id => 'payment-form' do %>
-
+                <%= hidden_field_tag 'tokener', params[:token] %>
                   <div class="form-row">
                     <label>
                       <span>Card Number</span>
-                      <input type="cardnum" class="form-control" id="exampleInputEmail2" placeholder="Enter Card Number">
+                      <input type="text" size="20" data-stripe="number" class="form-control" id="carder" />
                     </label>
                   </div>
 
                   <div class="form-row">
                     <label>
                       <span>CVC</span>
-                      <input type="cardnum" class="form-control" id="exampleInputEmail2" placeholder="Enter Card Number">
+                      <input type="text" size="4" data-stripe="cvc" class="form-control" />
                     </label>
                   </div>
+
+                  
 
                   <div class="form-row">
+                  
                     <label>
                       <span>Expiration (MM/YYYY)</span>
-                      <input type="text" size="2" data-stripe="exp-month"/>
+                      <input type="text" size="2" data-stripe="exp-month" /> 
+                      <span> / </span>
+                      <input type="text" size="4" data-stripe="exp-year"/>
                     </label>
-                    <span> / </span>
-                    <input type="text" size="4" data-stripe="exp-year"/>
                   </div>
-                  
                   <div>
-                    <code class='payment-errors' style='display: none;'></code>
-                  </div>
-                  
-
-                  <button type="submit">Submit Payment</button>
+                    <span class="payment-errors"></span>
+                  </div>                    
+                  <%= submit_tag "Make Payment ($#{ @money }) ", :class => 'btn btn-success' %>
             <%end %>
       </div> <!-- colxs9 -->
     </div>
    </div>
 </div>
+
+
+
+
+
 
 <script>
 
@@ -79,6 +84,7 @@ function stripeResponseHandler(status, response) {
   }
 };
 
+
 jQuery(function($) {
   $('#payment-form').submit(function(event) {
     var $form = $(this);
@@ -92,4 +98,18 @@ jQuery(function($) {
     return false;
   });
 });  
+
+</script>
+<script type="text/javascript">
+  $(function(){
+
+    $("#carder").keyup(function(){
+        var $this = $(this);
+        
+        if ((($this.val().length+1) % 5)==0){
+            $this.val($this.val() + " ");
+        }
+    });        
+});
+  
 </script>

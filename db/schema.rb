@@ -11,13 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150114122909) do
+ActiveRecord::Schema.define(version: 20150117113610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "accounts", force: true do |t|
     t.string   "mask"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "synthesizes", force: true do |t|
+    t.string   "tokener"
+    t.integer  "mtn"
+    t.float    "money"
+    t.string   "first_name"
+    t.string   "last_name"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

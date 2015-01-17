@@ -34,12 +34,12 @@
  <div id="header" class="row">
      <h1><a href="/">Sumasika</a></h1>
      <div class="navigation">
-     <div class="account-dropdown-view">
+     <div class="account-dropdown-view" id="dropdownview" style="cursor:pointer">
        <a class="account">
          <em style="background-image:url(https://secure.gravatar.com/avatar/c1e76de0b4f4f99d72c9d9964985e983?s=32&amp;d=https://stripe.com/img/header/user/16x16.png)"><img src="https://secure.gravatar.com/avatar/c1e76de0b4f4f99d72c9d9964985e983?s=32&amp;d=https://stripe.com/img/header/user/16x16.png" width="16" height="16"></em>
          <span>Your Account</span>
        </a>
-       <div class="submenu">
+       <div class="submenu" id="viewsubmenu">
          <ul class="root">
            <li><a href="#">Your Dashboard</a></li>
            <li><a href="#">Account Settings</a></li>
@@ -90,5 +90,12 @@
  </div>
  <!-- <%= render :partial => 'layouts/footer' %> -->
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+ <script type="text/javascript">
+           jQuery(function($) {
+               $('#dropdownview').click(function () {
+                   $('#viewsubmenu').toggle();
+               })
+           });
+       </script>
  </body>
 </html>
