@@ -6,7 +6,8 @@
                  <!--  <button class="btn btn-link" style="color:white">How It Works</button>
                   -->
                   <button class="btn btn-link" style="color:white">How it works</button>
-                  <button class="btn btn-link" style="color:white">Login</button>
+                  <!-- <button class="btn btn-link" style="color:white">Login</button> -->
+                <%= link_to 'Login',sessions_new_path, :class=>'btn btn-link', :style=>'color:white'  %>
                  <div class="clear_fix"></div>
              
              </div><!--reglog_btn-->
@@ -20,7 +21,8 @@
         <h1>Send Money to Ghana - Cheaper and Faster.</h1>
         <h3 class="show-for-medium-up">Try the hottest new way to send or pay</h3>
         <div class="sign-up-button">
-        <button class="btn btn-success" style="margin-top:35px">SIGN UP NOW</button>
+        <!-- <button class="btn btn-success" style="margin-top:35px">SIGN UP NOW</button> -->
+        <%= link_to 'SIGN UP NOW',members_new_path,:class=>'btn btn-success',:style=>'margin-top:35px'  %>
         </div>
       </div>
     </div>
@@ -50,7 +52,8 @@
   </div>
   <div class="row" style="text-align:center;margin-top:35px">
     <h4 style="text-align:center"><i>Save up to <b>4%</b> with SUMASIKA!</i></h4><br>
-    <button class="btn btn-success">Send Money Now!</button>
+   <!--  <button class="btn btn-success">Send Money Now!</button> -->
+    <%= link_to 'Send Money Now!',dashboard_index_path,:class=>'btn btn-success' %>
   </div>
 </div>
 <!--How it work -->
