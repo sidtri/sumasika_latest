@@ -3,6 +3,11 @@ before_action :authenticated
   def index
   	
   end
+
+  def ghana
+    render :json => User.all
+  end
+
   def create
   	@synthesize = Synthesize.new(params_permit)
   	@synthesize.user_id = session[:user_id]
@@ -21,9 +26,17 @@ before_action :authenticated
   end	
    
   def settings
-    binding.pry
+    @settingdetails = my_session
   end
 
+  def email_update
+    binding.pry
+    my_session.update()
+  end
+  def details_update
+    # binding.pry
+    my_session.update(:first_name => params[:first_name],:last_name =>params[:last_name],:dob => params[:dob],:address => params[:address],:postalcode => params[:postalcode])
+  end
   private
   	def params_permit
   		params.permit(:mtn, :money, :first_name, :last_name)

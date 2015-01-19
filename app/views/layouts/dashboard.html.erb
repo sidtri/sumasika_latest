@@ -72,13 +72,13 @@
         <% end %>
                 </li>
                 <li>
-                  <a href="#profile" style="border-bottom: 1px solid #E6E6E6;">
+                  <a href="<%= dashboard_transactions_path %>" style="border-bottom: 1px solid #E6E6E6;">
                     <span class="glyphicon glyphicon-repeat" style="padding-right: 10px;"></span><span>Transactions</span>
                   </a>
                 </li>
                 <li><a href="#messages" style=" border-bottom: 1px solid #E6E6E6;">
                   <span class="glyphicon glyphicon-ok"style="padding-right: 10px;"></span><span>Verification</span></a></li>
-                <li><a href="#settings" ><span class="glyphicon glyphicon-cog" style="padding-right: 10px;"></span><span>Settings</span></a></li>
+                <li><a href="<%=dashboard_settings_path %>" ><span class="glyphicon glyphicon-cog" style="padding-right: 10px;"></span><span>Settings</span></a></li>
           </ul>
        </div>    
      <div class="col-xs-10">

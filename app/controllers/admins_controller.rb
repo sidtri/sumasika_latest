@@ -22,4 +22,10 @@ class AdminsController < ApplicationController
   		@details = [@details] 
   	end
   end
+
+  def approve
+    @syn = Synthesize.find(params[:baser])
+    @syn.status = "complete"
+    redirect_to admin_pending_path if @syn.save
+  end
 end

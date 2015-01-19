@@ -92,6 +92,8 @@ GEM
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
+    money (6.5.0)
+      i18n (>= 0.6.4, <= 0.7.0)
     multi_json (1.10.1)
     netrc (0.10.2)
     nokogiri (1.6.5)
@@ -101,6 +103,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-rails (0.3.2)
+      pry (>= 0.9.10)
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -182,8 +186,10 @@ DEPENDENCIES
   country_select
   jbuilder (~> 2.0)
   jquery-rails
+  money
   pg
   pry
+  pry-rails
   rails (= 4.2.0.rc3)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

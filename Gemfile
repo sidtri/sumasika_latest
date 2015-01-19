@@ -49,3 +49,6 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 gem 'countries'
 gem 'country_select'
+gem 'money'
+
+gem 'pry-rails', :group => :development

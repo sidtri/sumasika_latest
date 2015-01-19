@@ -1,9 +1,8 @@
 <h3>User Details</h3>
 <ul>
-	<li><%= @detail.user.first_name %></li>
-	<li><%= @detail.user.last_name %></li>
-	<li><%= @detail.user.address %></li>
-	<li><%= @detail.user.country %></li>
+	<li>Name :: <%= @detail.user.first_name %> <%=@detail.user.last_name %></li>
+	<li>Address :: <%= @detail.user.address %></li>
+	<li>Country :: <%= Country.new(@detail.user.country).name %></li>
 </ul>
 
 <div class="row">
@@ -29,5 +28,11 @@
 				</tr>
 			</tbody>
 		</table>
+		<%= form_tag admin_approve_path do %>
+			<%= hidden_field_tag 'baser', params[:id] %>
+			<%= submit_tag 'Approve', :class => 'btn btn-success pull-right' %>
+		<%end %>
+
 	</div>
 </div>
+

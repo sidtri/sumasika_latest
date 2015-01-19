@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   
+  # My Api
+  get 'jsoners/ghana/:currency/:money' => 'jsoners#ghana'
 
   get 'admin' => 'admins#index'
   get 'admin/show/:id' => 'admins#show', as: 'show_admin'
   get 'admin/pending' => 'admins#pending'
   get 'admin/past' => 'admins#past'
+  post 'admin/approve' => 'admins#approve'
 
  # Signup Routes
   get 'members/index'
@@ -18,13 +21,16 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get  'sessions/destroy'
   post 'sessions/create'
+
   
   # Dashboard Routes
   get 'dashboard/index'
   get 'dashboard/transactions'
   get 'dashboard/settings'
   post 'dashboard/create'
-
+  post 'dashboard/details_update'
+  post 'dashboard/email_update'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

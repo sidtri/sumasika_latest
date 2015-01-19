@@ -63,10 +63,13 @@
                   <!-- <a href="#home" style=" border-bottom: 1px solid #E6E6E6;">  </a> -->
               <% # link_to '<span class="glyphicon glyphicon-random" style="padding-right:10px;"></span>
              # <span>Send Money</span>' , charges_path , :style => 'border-bottom: 1px solid #E6E6E6' %>
-                   <%= link_to admin_path, :style => "border-bottom: 1px solid #E6E6E6;" do %>
-                    <span class="glyphicon glyphicon-random" style="padding-right:10px;"></span>
-                    <span>Transactions</span>
+                   <%= link_to admin_pending_path, :style => "border-bottom: 1px solid #E6E6E6;" do %>
+                    <span class="glyphicon glyphicon-pencil" style="padding-right:10px;"></span>
+                    <span>Pending Reports</span>
                   <% end %>
+                </li>
+                <li>
+                  <a href="<%= admin_past_path %>"><span class="glyphicon glyphicon-search" style='padding-right:10px'></span>Past Reports</a>
                 </li>
                 <li><a href="#settings" ><span class="glyphicon glyphicon-cog" style="padding-right: 10px;"></span><span>Settings</span></a></li>
           </ul>
