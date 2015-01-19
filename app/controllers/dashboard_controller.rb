@@ -19,7 +19,10 @@ before_action :authenticated
     # binding.pry
     @details = my_session.synthesizes
   end	
-
+   
+  def settings
+    binding.pry
+  end
 
   private
   	def params_permit

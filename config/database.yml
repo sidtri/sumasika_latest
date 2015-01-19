@@ -20,5 +20,5 @@ development:
   database: sumasikaa
   host: localhost
   username: postgres
-  password: media3
+  password: siddhusid
   poll: 10

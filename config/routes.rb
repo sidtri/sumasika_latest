@@ -16,12 +16,15 @@ Rails.application.routes.draw do
 
   # Signin Routes
   get 'sessions/new'
+  get  'sessions/destroy'
   post 'sessions/create'
   
   # Dashboard Routes
   get 'dashboard/index'
   get 'dashboard/transactions'
-  post 'dashboard/create' 
+  get 'dashboard/settings'
+  post 'dashboard/create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

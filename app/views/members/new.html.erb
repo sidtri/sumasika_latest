@@ -26,12 +26,9 @@
 
 		 			   <div class="form-group">
 		 			    <%= label_tag 'exampleInputPassword1', 'Select Country' , :style =>''  %>
-		 			  
-		 			
-		 			  <%= select_tag(:country,options_for_select([["Afghanistan", 1], ["India", 2]]),{ :class => 'form-control' }) %>
-		 			    
-		 			    
+		 			  	<%= country_select("user", "country") %>
 		 			   </div>
+		 			   
 		 			    <div class="form-group">
 		 			    <%= label_tag 'exampleInputPassword1', 'First Name', :style =>''  %>
 		 			  

@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
  include BCrypt
  has_one :account
  has_many :synthesizes
+ validates_uniqueness_of :email
 
  def password
     @password ||= Password.new(password_hash)

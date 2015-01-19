@@ -11,6 +11,7 @@ class MembersController < ApplicationController
   def create
    # validate_captcha
    @user = User.new(req_params)
+   @user.country = params[:user][:country]
    @user.password = params[:password]
    if @user.save
     @stripe_account = generate_customer
@@ -25,7 +26,7 @@ class MembersController < ApplicationController
   
   private
   	def req_params
-  		params.permit(:email, :first_name, :last_name, :country, :dob, :address)
+  		params.permit(:email, :first_name, :last_name, :user, :dob, :address)
   	end
     def generate_customer
       Stripe::Customer.create(:email => req_params[:email])
