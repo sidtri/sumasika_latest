@@ -12,6 +12,11 @@ before_action :authenticated
   	else
   		render :text => 'Something went wrong'
   	end
+  end
+
+  def transactions
+    binding.pry
+    @details = my_session.synthesizes
   end	
 
 
