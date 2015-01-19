@@ -9,7 +9,6 @@ class ChargesController < ApplicationController
 
 	def create
 	  # Amount in cents
-	  binding.pry
 	  @amount = Synthesize.find_by_tokener(params[:tokener]).money * 100
 	  customer = my_customer
 	  customer.description = "Testing description need to update"

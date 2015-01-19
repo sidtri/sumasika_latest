@@ -1,0 +1,33 @@
+<h3>User Details</h3>
+<ul>
+	<li><%= @detail.user.first_name %></li>
+	<li><%= @detail.user.last_name %></li>
+	<li><%= @detail.user.address %></li>
+	<li><%= @detail.user.country %></li>
+</ul>
+
+<div class="row">
+	<div class="col-xs-12">
+		<table class="table table-bordered table-condensed table-striped">
+			<legend>Transactions</legend>
+			<thead>
+				<tr>
+					<th>Sender Name</th>
+					<th>Receipient Name</th>
+					<th>Receipient Mobile number</th>
+					<th>Money</th>
+					<th>Sent Date</th>
+				</tr>
+			</thead>
+			<tbody>
+			 	<tr>
+					<td><%= @detail.user.first_name %></td>
+					<td><%= @detail.first_name %></td>
+					<td><code><%= @detail.mtn %></code></td>
+					<td><%= @detail.money %></td>
+					<td><%= @detail.created_at.strftime("%x") %> UTC</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

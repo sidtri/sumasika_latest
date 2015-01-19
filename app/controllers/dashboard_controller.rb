@@ -7,6 +7,7 @@ before_action :authenticated
   	@synthesize = Synthesize.new(params_permit)
   	@synthesize.user_id = session[:user_id]
   	@synthesize.tokener = SecureRandom.urlsafe_base64 
+    @synthesize.status = 'pending'
   	if @synthesize.save
   		redirect_to :controller => :charges, :action => :index, :token => @synthesize.tokener
   	else
@@ -15,7 +16,7 @@ before_action :authenticated
   end
 
   def transactions
-    binding.pry
+    # binding.pry
     @details = my_session.synthesizes
   end	
 

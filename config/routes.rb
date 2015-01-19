@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   
 
   get 'admin' => 'admins#index'
+  get 'admin/show/:id' => 'admins#show', as: 'show_admin'
+  get 'admin/pending' => 'admins#pending'
+  get 'admin/past' => 'admins#past'
 
  # Signup Routes
   get 'members/index'
