@@ -15,13 +15,13 @@
 		 			 <div class="form-group">
 		 			 	<%= label_tag 'exampleInputEmail1', 'Email address', :style =>'' %>
 		 			    <!-- <label for="exampleInputEmail1">Email address</label> -->
-		 			    <%= text_field_tag 'email' , "",class: 'form-control' %>
+		 			    <%= text_field_tag 'email' , "",class: 'form-control',:required => true %>
 		 			    
 		 			  </div>
 		 			  <div class="form-group">
 		 			  	<%= label_tag 'exampleInputPassword1', 'Password', :style =>''  %>
 		 			    
-		 			    <%= password_field_tag 'password' , '',class: 'form-control',placeholder: 'Enter password' %>
+		 			    <%= password_field_tag 'password' , '',class: 'form-control',placeholder: 'Enter password',:required => true %>
 		 			   </div>
 
 		 			   <div class="form-group">
@@ -33,7 +33,7 @@
 		 			    <%= label_tag 'exampleInputPassword1', 'First Name', :style =>''  %>
 		 			  
 		 			
-		 			  <%= text_field_tag 'first_name' , "",class: 'form-control' %>
+		 			  <%= text_field_tag 'first_name' , "",class: 'form-control',:required => true %>
 		 			    
 		 			    
 		 			   </div>
@@ -41,33 +41,33 @@
 		 			    <%= label_tag 'exampleInputPassword1', 'Last Name', :style =>''  %>
 		 			  
 		 			
-		 			  <%= text_field_tag 'last_name' , "",class: 'form-control' %>
+		 			  <%= text_field_tag 'last_name' , "",class: 'form-control',:required => true %>
 		 			    
 		 			   </div>
 		 			  <div class="form-group">
-		 			    <%= label_tag 'exampleInputPassword1', 'Number And Street Address', :style =>''  %>
+	<%= label_tag 'exampleInputPassword1', 'Number And Street Address'  %>
 		 			  
 		 			
-		 			  <%= text_field_tag 'address' , "",class: 'form-control' %>
+		 		 <%= text_field_tag 'address' , "",class: 'form-control', :required => true %>
 		 			    
 		 			   </div>
 		 			   <div class="form-group">
 		 			    <%= label_tag 'exampleInputPassword1', 'Town', :style =>'' %>
 		 			  
 		 			
-		 			  <%= text_field_tag 'city' , "",class: 'form-control' %>
+		 			  <%= text_field_tag 'city' , "",class: 'form-control', :required => true %>
 		 			    
 		 			   </div>
 		 			   <div class="form-group">
 		 			    <%= label_tag 'exampleInputPassword1', 'Post Code',:style =>'' %>
 		 			  
-		 			  <%= text_field_tag 'postal' , "",class: 'form-control' %>
+		 			  <%= text_field_tag 'postal' , "",class: 'form-control',:required => true %>
 		 			    
 		 			   </div>
 		 			 <div class="form-group">
 		 			    <%= label_tag 'exampleInputPassword1', 'Date Of Birth',:style =>'' %>
 		 			  
-		 			  <%= date_field_tag 'dob' , "",class: 'form-control' %>
+		 			  <%= date_field_tag 'dob' , "",class: 'form-control',:required => true %>
 		 			    
 		 			   </div>
 		 			<div class="form-group">
@@ -77,7 +77,7 @@
 
 		 		  <div class="checkbox">
 		 		    <label>
-		 		      <input type="checkbox"> I agree to allow Sumasika to confirm the identity information I have submitted.
+		 		      <input type="checkbox" required /> I agree to allow Sumasika to confirm the identity information I have submitted.
 		 		    </label>
 		 		  </div>
 

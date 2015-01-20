@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 20150119115722) do
     t.datetime "dob"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "token"
+    t.integer  "active"
     t.integer  "role"
     t.string   "postalcode"
   end

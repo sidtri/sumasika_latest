@@ -29,13 +29,24 @@ before_action :authenticated
     @settingdetails = my_session
   end
 
-  def email_update
-    binding.pry
-    my_session.update()
-  end
+  
   def details_update
-    # binding.pry
-    my_session.update(:first_name => params[:first_name],:last_name =>params[:last_name],:dob => params[:dob],:address => params[:address],:postalcode => params[:postalcode])
+    
+    @save=my_session.update(:first_name => params[:first_name],:last_name =>params[:last_name],:dob => params[:dob],:email => params[:email],:country => params[:user][:country],:address => params[:address],:postalcode => params[:postalcode])
+
+    
+
+    if @save
+
+      redirect_to  dashboard_settings_path , :flash => { :error => "Your Account is Updated sucessfully" }  
+
+    else
+
+      redirect_to  dashboard_settings_path , :flash => { :error => "Your Account is Updated  Failed" }  
+
+    end
+    
+    
   end
   private
   	def params_permit
