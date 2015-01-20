@@ -8,6 +8,18 @@
 	</div>
 	<div class="col-xs-6">
 		<div class="well">
+			<div class="row">
+		<% if flash[:error] %> 
+			<div class="col-xs-12">
+
+				<div class="alert alert-danger" role="alert" style="text-align: center; padding: 0px;">
+					<span class="glyphicon glyphicon-exclamation-sign" style="font-size:16px;"></span>
+					<span style="font-size:16px;"><%= flash[:error] %></span> 
+				</div>
+			</div>
+		<% end %>
+		
+	</div>
 			<%=form_tag sessions_create_path, :class => 'form' do |f|   %>
 			 <div class="form-group">
 		     	<%= label_tag 'exampleInputEmail1', 'Email address' %>

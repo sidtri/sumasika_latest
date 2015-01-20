@@ -11,6 +11,15 @@
 		</div>
 		<div class="col-xs-6">
 		 	<div class="well">
+		 		<% if flash[:error] %> 
+			<div class="col-xs-12">
+
+				<div class="alert alert-danger" role="alert" style="text-align: center; padding: 0px;">
+					<span class="glyphicon glyphicon-exclamation-sign" style="font-size:16px;"></span>
+					<span style="font-size:16px;"><%= flash[:error] %></span> 
+				</div>
+			</div>
+		<% end %>
 		 		 <%= form_tag members_create_path do -%>
 		 			 <div class="form-group">
 		 			 	<%= label_tag 'exampleInputEmail1', 'Email address', :style =>'' %>
