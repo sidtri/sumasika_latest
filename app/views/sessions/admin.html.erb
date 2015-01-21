@@ -2,34 +2,22 @@
 	<div class="row" >
 	<div class="col-xs-6">
 		<div class="row" style="text-align:center; position:fixed;">
-		<h1 class="signuphed">Join Sumasika</h1>
-		<h3 class="signuphed3">or <%= link_to 'Signup', members_new_path %></h3>
+		<h1 class="signuphed">Admin Login</h1>
 		</div>
 	</div>
 	<div class="col-xs-6">
 		<div class="well">
-			<div class="row">
-		<% if flash[:error] %> 
-			<div class="col-xs-12">
-
-				<div class="alert alert-danger" role="alert" style="text-align: center; padding: 0px;">
-					<span class="glyphicon glyphicon-exclamation-sign" style="font-size:16px;"></span>
-					<span style="font-size:16px;"><%= flash[:error] %></span> 
-				</div>
-			</div>
-		<% end %>
-		<% if flash[:notice] %> 
-		<div class="col-xs-12">
-           <div class="alert alert-success" role="alert" style="text-align: center; padding: 0px;">
-               <span class="glyphicon glyphicon-ok" style="font-size:16px;"></span>
-               <span style="font-size:16px;"><%= flash[:notice] %></span> 
-           </div>
-       </div>
-       <% end %>
-
-		
-	</div>
-			<%=form_tag sessions_create_path, :class => 'form' do |f|   %>
+ 		<%if !flash[:notice].nil? %>
+	 		<div class="row">
+	 			<div class="col-xs-12">
+	 				<div class="alert alert-success" role="alert" style="text-align: center;">
+	 					<span class="glyphicon glyphicon-saved" style="font-size:20px;"></span>
+	 					<span style="font-size:20px;"><%= flash[:notice] %></span> 
+	 				</div>
+	 			</div>
+	 		</div>
+ 		<%end %>
+			<%=form_tag admin_sessions_create_path, :class => 'form' do |f|   %>
 			 <div class="form-group">
 		     	<%= label_tag 'exampleInputEmail1', 'Email address' %>
 			    <!-- <label for="exampleInputEmail1">Email address</label> -->

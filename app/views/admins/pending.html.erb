@@ -1,31 +1,38 @@
 <div class="row">
 	<div class="col-xs-12">
-		<table class="table table-bordered table-condensed table-striped">
-			<legend>Pending Transactions</legend>
-			<thead>
-				<tr>
-					<th>Sl no.</th>
-					<th>Sender Name</th>
-					<th>Receipient Name</th>
-					<th>Receipient Mobile number</th>
-					<th>Money</th>
-					<th>Sent Date</th>
-				</tr>
-			</thead>
-			<tbody>
-			<%unless @details.nil? %>
-			 <% @details.each_with_index do |data, index| %>
-				<tr>
-					<td class="text-center"><a href="<%=show_admin_path(data.id) %>"><%= index+1 %></a></td>
-					<td><%= data.user.first_name %></td>
-					<td><%= data.first_name %></td>
-					<td><code><%= data.mtn %></code></td>
-					<td>$ <%= data.money %></td>
-					<td><%= data.created_at.strftime("%x") %> UTC</td>
-				</tr>
-			  <%end%>
-			 <%end %>
-			</tbody>
-		</table>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Pending Transactions
+			</div>
+			<div class="panel-body">
+				<table class="table table-bordered table-condensed table-striped">
+					<thead>
+						<tr>
+							<th>Sl no.</th>
+							<th>Sender Name</th>
+							<th>Receipient Name</th>
+							<th>Receipient Mobile number</th>
+							<th>Money</th>
+							<th>Sent Date</th>
+						</tr>
+					</thead>
+					<tbody>
+					<%unless @details.nil? %>
+					 <% @details.each_with_index do |data, index| %>
+						<tr>
+							<td class="text-center"><a href="<%=show_admin_path(data.id) %>"><%= index+1 %></a></td>
+							<td><%= data.user.first_name %></td>
+							<td><%= data.first_name %></td>
+							<td><code><%= data.mtn %></code></td>
+							<td>$ <%= data.money %></td>
+							<td><%= data.created_at.strftime("%x") %> UTC</td>
+						</tr>
+					  <%end%>
+					 <%end %>
+					</tbody>
+				</table>		
+			</div>
+		</div>
+		
 	</div>
 </div>

@@ -8,12 +8,15 @@ Rails.application.routes.draw do
   get 'admin/pending' => 'admins#pending'
   get 'admin/past' => 'admins#past'
   post 'admin/approve' => 'admins#approve'
-
+  
  # Signup Routes
   get 'members/index'
   get 'members/new'
   post 'members/create'
-
+  get 'admin/members/new' => 'members#admin'
+  post 'admin/members/create' => 'members#creators'
+  get 'members/verifyemail/:token' => 'members#verifyemail', as: 'member_verifyemail'
+  
   # Email Verifications and sending
   get 'registrations/fresher'
 
@@ -21,7 +24,9 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get  'sessions/destroy'
   post 'sessions/create'
-
+  get 'admin/sessions/new' => 'sessions#admin'
+  post 'admin/sessions/create' => 'sessions#creators'
+  get 'admin/sessions/destroy' => 'sessions#admin_destroy'
   
   # Dashboard Routes
   get 'dashboard/index'

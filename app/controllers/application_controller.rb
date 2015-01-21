@@ -14,7 +14,12 @@ class ApplicationController < ActionController::Base
       redirect_to sessions_new_path if session[:user_id].nil? 
     end
     
-    def checkadmin 
-      redirect_to dashboard_index_path unless my_session.role == 1
+    def checkadmin
+      redirect_to admin_sessions_new_path if session[:manager_id].nil?
+    end
+
+    def checkuser
+      # redirect_to sessions_new_path 
+     redirect_to sessions_new_path unless session[:user_id].nil?
     end
 end

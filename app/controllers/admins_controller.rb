@@ -1,8 +1,9 @@
 class AdminsController < ApplicationController
-	before_filter :authenticated
-	before_filter :checkadmin 
+	before_action :checkuser
+  before_action :checkadmin
+
   def index
-  	
+   redirect_to admin_pending_path
   end
 
   def past
@@ -28,4 +29,5 @@ class AdminsController < ApplicationController
     @syn.status = "complete"
     redirect_to admin_pending_path if @syn.save
   end
+
 end

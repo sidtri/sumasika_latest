@@ -8,18 +8,17 @@
 	<div class="panel-body">
 			
 	<%= form_tag dashboard_details_update_path, :class => 'form' do |f| %>
+	<% if flash[:error] %> 
 	<div class="row">
-		<% if flash[:error] %> 
-			<div class="col-xs-12">
-
-				<div class="alert alert-success" role="alert" style="text-align: center;">
-					<span class="glyphicon glyphicon-saved" style="font-size:20px;"></span>
-					<span style="font-size:20px;"><%= flash[:error] %></span> 
-				</div>
+		<div class="col-xs-12">
+			<div class="alert alert-success" role="alert" style="text-align: center;">
+				<span class="glyphicon glyphicon-saved" style="font-size:20px;"></span>
+				<span style="font-size:20px;"><%= flash[:error] %></span> 
 			</div>
+		</div>
+	</div>
 		<% end %>
 		
-	</div>
 			 <div class="row">
 			 	<div class="col-xs-12 col-xs-push-2">
 					 <div class="col-xs-4 ">
