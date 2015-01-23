@@ -184,54 +184,65 @@
           <div class="col-lg-6 col-md-6 col-sm-8">
             <!-- contact form begins -->
                       <div class="quform-outer quform-theme-custom-custom">
-                          <form class="quform" action="contact-form/process.php" method="post" enctype="multipart/form-data" onclick="">
-                  
-                              <div class="quform-inner">
-                                  
-                                  <div class="quform-elements">
-                                                                          
-                                      <!-- begin name input element -->
-                                      <div class="quform-element quform-element-text">
-                                          <div class="quform-spacer">
-                                              <div class="quform-input">
-                                                <input id="name" type="text" class="form-control" name="name" placeholder="Name">
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <!-- end name input element -->
-      
-                                      <!-- begin email input element -->
-                                      <div class="quform-element quform-element-text">
-                                          <div class="quform-spacer">
-                                              <div class="quform-input">
-                                                <input id="email" type="text" class="form-control" name="email" placeholder="Email">
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <!-- end email input element -->
-                                      
-                                      <!-- begin Textarea element -->
-                                      <div class="quform-element quform-element-textarea quform-huge">
-                                          <div class="quform-spacer">
-                                              <div class="quform-input">
-                                                <textarea id="message" class="form-control" name="message" placeholder="Message"></textarea>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <!-- end Textarea element -->
-                                                          
-                                      <!-- begin Submit button -->
-                                      <div class="quform-submit">
-                                          <div class="quform-submit-inner">
-                                              <button type="submit" value="Send" class="btn btn-default"><span><em>Send</em></span></button>
-                                          </div>
-                                          <div class="quform-loading-wrap"><span class="quform-loading"></span></div>
-                                      </div>
-                                      <!-- end Submit button -->
-                                      
-                                 </div>
-                             </div>
-                          </form>
+                          <%= form_tag cras_contactus_path ,:class=> 'quform'  do %>
+                                            
+                                                        <div class="quform-inner">
+                                                            
+                                                            <div class="quform-elements">
+                                                                                                    
+                                                                <!-- begin name input element -->
+                                                                <div class="quform-element quform-element-text">
+                                                                    <div class="quform-spacer">
+                                                                        <div class="quform-input">
+                                                                          <!-- <input id="name" type="text" class="form-control" name="name" placeholder="Name"> -->
+                                                                        <%= text_field_tag 'name' , "",class: 'form-control' ,placeholder: 'Name' %>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end name input element -->
+                                
+                                                                <!-- begin email input element -->
+                                                                <div class="quform-element quform-element-text">
+                                                                    <div class="quform-spacer">
+                                                                        <div class="quform-input">
+                                                                         <!--  <input id="email" type="text" class="form-control" name="email" placeholder="Email"> -->
+                                                                      <%= text_field_tag 'email' , "",class: 'form-control' ,placeholder: 'Email' %>
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end email input element -->
+                                                                
+                                                                <!-- begin Textarea element -->
+                                                                <div class="quform-element quform-element-textarea quform-huge">
+                                                                    <div class="quform-spacer">
+                                                                        <div class="quform-input">
+                                                                         <!--  <textarea id="message" class="form-control" name="message" placeholder="Message"></textarea> -->
+                                                            <%= text_area_tag 'msg','',class: 'form-control', rows: 10, cols: 25 ,placeholder: "Message" %>
+
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end Textarea element -->
+                                                                                    
+                                                                <!-- begin Submit button -->
+                                                                <div class="quform-submit">
+                                                                    <div class="quform-submit-inner">
+                                                                   <!--  <button type="submit" value="Send" class="btn btn-default"> -->
+                                                                  <%= submit_tag 'Send',class: 'btn btn-default',name: 'send' %>
+
+                                                                   
+                                                                    </div>
+                                                                    <div class="quform-loading-wrap"><span class="quform-loading"></span></div>
+                                                                </div>
+                                                                <!-- end Submit button -->
+                                                                
+                                                           </div>
+                                                       </div>
+                                                    <% end %>
                       </div>
                       <!-- contact form ends -->
           </div> <!-- end col-lg-6 -->

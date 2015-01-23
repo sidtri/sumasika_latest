@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150121125218) do
+ActiveRecord::Schema.define(version: 20150122114211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20150121125218) do
 
   create_table "synthesizes", force: true do |t|
     t.string   "tokener"
-    t.integer  "mtn"
+    t.string   "mtn"
     t.float    "money"
     t.string   "first_name"
     t.string   "last_name"

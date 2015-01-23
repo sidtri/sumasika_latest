@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :user_dashboard, only: [:new, :create, :destroy]
+  before_action :user_dashboard, only: [:new, :create]
   before_action :admin_dashboard, only: [:admin, :creators]
   before_action :migrate_dashboard
 
@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
     if !@manager.nil? && BCrypt::Password.new(@manager.password) == params[:password]
       if @manager.active
         session[:manager_id] = @manager.id
-        redirect_to root_url
+        redirect_to admin_path, :notice => "Welcome to sumasika"
       else
         redirect_to admin_sessions_new_path, :notice => "Admin needs to activate your account"
       end
@@ -35,16 +35,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  def admin_destroy
-    binding.pry
-    session[:manager_id] = nil
-    redirect_to root_url
-  end
   
-  def destroy
-    session[:user_id] = nil
-    redirect_to root_url
-  end
   private
     def user_dashboard
       redirect_to dashboard_index_path unless session[:user_id].nil?

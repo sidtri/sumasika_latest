@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  
   # My Api
   get 'jsoners/ghana/:currency/:money' => 'jsoners#ghana'
 
@@ -7,7 +8,9 @@ Rails.application.routes.draw do
   get 'admin/show/:id' => 'admins#show', as: 'show_admin'
   get 'admin/pending' => 'admins#pending'
   get 'admin/past' => 'admins#past'
+  get 'admin/activation' => 'admins#activation'
   post 'admin/approve' => 'admins#approve'
+  get 'admin/approved/:uid' => 'admins#approved', as: 'admin_approved' 
   
  # Signup Routes
   get 'members/index'
@@ -22,11 +25,11 @@ Rails.application.routes.draw do
 
   # Signin Routes
   get 'sessions/new'
-  get  'sessions/destroy'
+  get  'sessions/destroy' => 'villian#user_destroy'
   post 'sessions/create'
   get 'admin/sessions/new' => 'sessions#admin'
   post 'admin/sessions/create' => 'sessions#creators'
-  get 'admin/sessions/destroy' => 'sessions#admin_destroy'
+  get 'admin/sessions/destroy' => 'villian#admin_destroy'
   
   # Dashboard Routes
   get 'dashboard/index'
@@ -51,6 +54,7 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   root 'cras#index'
+  post 'cras/contactus' => 'cras#contactus', as: 'cras_contactus'
   resources :charges
 
   

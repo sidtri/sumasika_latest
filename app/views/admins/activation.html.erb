@@ -1,0 +1,61 @@
+<div class="row">
+	
+	<div class="col-xs-12">
+		<% if flash[:error] %>
+			<div class="row">
+				<div class="col-xs-3"></div>
+					<div class="col-xs-6" role="alert">
+						<div class="alert alert-info" style="text-align:center; font-size:18px;">
+							<span class="glyphicon glyphicon-ok"></span>
+							<span> <%= params[:fname] %> <%= params[:lname] %><%= flash[:error]  %></span>
+
+						</div>
+
+					</div>
+				<div class="col-xs-3"></div>
+
+		   </div>
+	   <% end %>
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				Inactivation Members
+			</div>
+			<div class="panel-body">
+				<table class="table table-bordered table-condensed table-striped">
+					<thead>
+						<tr>
+							<th>Sl no.</th>
+							<th> First Name</th>
+							<th> Last Name</th>
+							<th>Email</th>
+							
+							<th>Approved</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+						
+						<% unless @memberdetails.nil? %>
+						   <% @memberdetails.each_with_index do |data, index| %> 
+								<tr>
+									<td><%= index+1 %></td>
+									<td><%= data.first_name %></td>
+									<td><%= data.last_name %></td>
+									<td><%= data.email %></td>
+									<td>
+									<a href="<%= admin_approved_path(data.id)  %>">Active</a></td>
+								</tr>
+						   <% end %>
+						<% else %>
+							<tr>
+								<td colspan="5">No Records....</td>
+							</tr>
+						<% end %>
+					
+					</tbody>
+				</table>		
+			</div>
+		</div>
+		
+	</div>
+</div>

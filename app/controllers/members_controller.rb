@@ -23,7 +23,7 @@ class MembersController < ApplicationController
     Account.create(:user_id => @user.id, :mask => @stripe_account.id)
     Reguser.sendemail(@user).deliver_now
     # Fresher.new_verification()  --- mail needs to send to user
-   	redirect_to sessions_new_path , :flash => { :error => "Your signup is sucessfully and now before do login verify your email " }
+   	redirect_to sessions_new_path , :flash => { :notice => "Your signup is sucessfully and now before do login verify your email " }
    else
    	redirect_to members_new_path , :flash => { :error => "Please check your credentials" }
    end
@@ -43,7 +43,6 @@ class MembersController < ApplicationController
     @manager.country = params[:user][:country]
     @manager.password = params[:password]
     @manager.active = false
-    binding.pry
     if @manager.save
       redirect_to admin_members_new_path, :notice => "Completed, Admin needs to verify your account"
     else

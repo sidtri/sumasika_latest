@@ -4,12 +4,18 @@ class ChargesController < ApplicationController
 	before_action :check_token, :only => [:index]
 
 	def index
-		@money = Synthesize.find_by_tokener(params[:token]).money
+		s = Synthesize.find_by_tokener(params[:token]).reload
+		if s.status == 'pending'
+			@money = s.money
+		else
+			render :text => "Your token expired please do recharge with new token"
+		end
 	end
 
 	def create
 	  # Amount in cents
-	  @amount = Synthesize.find_by_tokener(params[:tokener]).money * 100
+	  synthesize = Synthesize.find_by_tokener(params[:tokener])
+	  @amount = synthesize.money * 100
 	  customer = my_customer
 	  customer.description = "Testing description need to update"
 	  customer.card = params[:stripeToken] # obtained with Stripe.js
@@ -20,6 +26,9 @@ class ChargesController < ApplicationController
 	    :description => 'Rails Stripe customer',
 	    :currency    => 'usd'
 	  )
+	  synthesize.status = "charged"
+	  synthesize.save
+
 
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message

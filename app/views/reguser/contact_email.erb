@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  	<p>Greetings,</p>
+  	<p>Thank you for contacting us!</p>
+  	<p>This is an automated response and is for your reference only. You need not reply to this mail.</p>
+  	<p>Please find below, the summary of your request.</p>
+  	<p>Date:: <%= Time.now %></p>
+  	<p>Name:: <%= @user["name"].capitalize %> </p>
+  	<p>Message:: <%= @user[:msg] %></p>
+    <br>
+    <br>
+    <p>Customer Support</p>
+    <a href="#">Sumasika</a>
+    
+  </body>
+</html>

@@ -19,41 +19,53 @@
    <div class="panel-body">
     <div class="row">
       <div class="col-xs-3">
-        <span class="glyphicon glyphicon-lock" style="text-align: center;font-size: 50px;color: #D2D2D2;">
-        </span>
+        <img src="/assets/secure.png" alt="">
       </div>
       <div class="col-xs-9">
             <%= form_tag charges_path, :id => 'payment-form' do %>
                 <%= hidden_field_tag 'tokener', params[:token] %>
-                  <div class="form-row">
-                    <label>
-                      <span>Card Number</span>
-                      <input type="text" size="20" data-stripe="number" class="form-control" id="carder" />
-                    </label>
+                <div class="row">
+                  <div class="col-xs-5">
+                    <div class="form-row">
+                      <label><span>Card Number</span></label>
+                      <input type="text" data-stripe="number" class="form-control" id="carder" placeholder='XXXX XXXX XXXX XXXX'/>
+                    </div> 
                   </div>
-
-                  <div class="form-row">
-                    <label>
-                      <span>CVC</span>
-                      <input type="text" size="4" data-stripe="cvc" class="form-control" />
-                    </label>
+                </div>
+                <div class="pad20"></div>
+                <div class="row">
+                  <div class="col-xs-2">
+                    <div class="form-row">
+                      <label><span>CVC</span></label>
+                      <input type="text" size="4" data-stripe="cvc" class="form-control" placeholder='XXX'/>
+                    </div>
                   </div>
-
-                  
-
-                  <div class="form-row">
-                  
-                    <label>
-                      <span>Expiration (MM/YYYY)</span>
-                      <input type="text" size="2" data-stripe="exp-month" /> 
-                      <span> / </span>
-                      <input type="text" size="4" data-stripe="exp-year"/>
-                    </label>
+                  <div class="col-xs-4">
+                    <div class="form-row">
+                      <label><span>Expiration (MM/YYYY)</span></label>
+                      <div class="row">
+                        <div class="col-xs-4">
+                          <input type="text" data-stripe="exp-month" class="form-control" placeholder='MM'/> 
+                        </div>
+                        <div class="col-xs-4" style="padding-left:0px">
+                          <input type="text" size="4" data-stripe="exp-year" class="form-control" placeholder='YYYY'/>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <span class="payment-errors"></span>
-                  </div>                    
-                  <%= submit_tag "Make Payment ($#{ @money }) ", :class => 'btn btn-success' %>
+                </div>
+                <div class="pad20"></div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <p class="help-block">We'll not remember your card during the charge. We'll create a fresh token for each transaction using stripe.</p>
+                  </div>
+                </div>
+                <span class="payment-errors text-danger"></span>
+                <div class="row">
+                  <div class="col-xs-6">
+                    <%= submit_tag "Make Payment ($#{ @money }) ", :class => 'btn btn-success' %>
+                  </div>
+                </div>
             <%end %>
       </div> <!-- colxs9 -->
     </div>
