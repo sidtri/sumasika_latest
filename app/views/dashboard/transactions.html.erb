@@ -3,33 +3,48 @@
 	      <h3 class="panel-title">
 	         <span class="glyphicon glyphicon-repeat" style="font-size:30px;"></span>
 	      </h3>
-	      <h3>History</h3>
+	      <h3>Previous transactions</h3>
 	</div>
 	<div class="panel-body" style="text-align:center">
-			<table class="table table-bordered table-condensed table-striped">
+		<% @details.each_with_index do |data, index| %>
+			
+				<div class="row">
+				<div class="col-xs-7">
+				<div class="well">
+				<dl class="dl-horizontal">
+  					<dt>Name:</dt>
+  					<dd><%= data.first_name+data.last_name %></dd>
+  					<dt>Amount:</dt>
+  					<dd><%= data.money %>USD → £7,968.23 GBP  </dd>
+  					<dt>MTN Number:</dt>
+  					<dd><%= data.mtn %></dd>
+  					<dt>Fee:</dt>
+  					<dd>&pound;191.44</dd>
+  					<dt>Date:</dt>
+  					<dd><%= data.created_at.strftime("%x") %> UTC</dd>
+  					<dt>Status:</dt>
+  					<dd><%= data.status %></dd>
+  					<dt>Description</dt>
+  					<dd>Rails Stripe customer</dd>
+				</dl>
+				</div>
+				</div>
+				</div>
 				
-				<thead>
-					<tr>
-						<th>Sl no.</th>
-						
-						<th>Receipient Name</th>
-						<th>Receipient Mobile number</th>
-						<th>Money</th>
-						<th>Sent Date</th>
-					</tr>
-				</thead>
-				<tbody>
-				 <% @details.each_with_index do |data, index| %>
-					<tr>
-						<td><%= index+1 %></td>
-						<td><%= data.first_name+data.last_name %></td>
-						<td><code><%= data.mtn %></code></td>
-						<td><%= data.money %></td>
-						<td><%= data.created_at.strftime("%x") %> UTC</td>
-					</tr>
-				  <%end%>
-				</tbody>
-			</table>
-		</div>
-     </div>
+			
+		<%end %>
+			
+	</div>
+     
 </div>
+
+Amount:
+$12,313.00 USD → £7,968.23 GBP  Info
+Fee:
+£191.44  Info
+Date:
+2015/01/22 09:44:23
+Status:
+Paid
+Description:
+Rails Stripe customer
