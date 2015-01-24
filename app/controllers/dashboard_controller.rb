@@ -2,6 +2,7 @@ class DashboardController < ApplicationController
 before_action :authenticated 
   def index
     @temporary = 1 	
+    @user=my_session
   end
 
   def ghana
@@ -22,10 +23,12 @@ before_action :authenticated
 
   def transactions
     # binding.pry
+    @user=my_session
     @details = my_session.synthesizes
   end	
    
   def settings
+     @user=my_session
     @settingdetails = my_session
 
   end
@@ -51,12 +54,12 @@ before_action :authenticated
   end
   ################################### view password ######################
   def changepwd
-     
+      @user=my_session
 
   end
 
   def updatepwd
-
+      @user=my_session
      if BCrypt::Password.new(User.find_by_token(params[:token]).password ) == params['oldpwd']
         if params['newpwd'] == params['confpwd']
 

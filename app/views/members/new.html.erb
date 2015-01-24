@@ -12,17 +12,18 @@
 		<div class="col-xs-6">
 		 	<div class="well">
 	 		
-		 		 <%= form_tag members_create_path do -%>
+		 		 
+		 		 <%= form_for @user, :url => members_create_path do |f| %>
 		 			 <div class="form-group">
 		 			 	<%= label_tag 'exampleInputEmail1', 'Email address', :style =>'' %>
 		 			    <!-- <label for="exampleInputEmail1">Email address</label> -->
-		 			    <%= text_field_tag 'email' , "",class: 'form-control',:required => true %>
+		 			    <%= text_field_tag 'user[email]' , "",class: 'form-control',:required => true %>
 		 			    
 		 			  </div>
 		 			  <div class="form-group">
 		 			  	<%= label_tag 'exampleInputPassword1', 'Password', :style =>''  %>
 		 			    
-		 			    <%= password_field_tag 'password' , '',class: 'form-control',placeholder: 'Enter password',:required => true %>
+		 			    <%= password_field_tag 'user[password]' , '',class: 'form-control',placeholder: 'Enter password',:required => true %>
 		 			   </div>
 
 		 			   <div class="form-group">
@@ -34,7 +35,7 @@
 		 			    <%= label_tag 'exampleInputPassword1', 'First Name', :style =>''  %>
 		 			  
 		 			
-		 			  <%= text_field_tag 'first_name' , "",class: 'form-control',:required => true %>
+		 			  <%= text_field_tag 'user[user[first_name]' , "",class: 'form-control',:required => true %>
 		 			    
 		 			    
 		 			   </div>
@@ -42,33 +43,37 @@
 		 			    <%= label_tag 'exampleInputPassword1', 'Last Name', :style =>''  %>
 		 			  
 		 			
-		 			  <%= text_field_tag 'last_name' , "",class: 'form-control',:required => true %>
+		 			  <%= text_field_tag 'user[last_name]' , "",class: 'form-control',:required => true %>
 		 			    
+		 			   </div>
+		 			   <div class="form-group">		
+		 			  		<%= label_tag 'exampleInputPassword1', 'Photo', :style =>''  %> 		
+		 			  		<%= f.file_field :image , class: 'form-control' ,:required => true  %>
 		 			   </div>
 		 			  <div class="form-group">
 	<%= label_tag 'exampleInputPassword1', 'Number And Street Address'  %>
 		 			  
 		 			
-		 		 <%= text_field_tag 'address' , "",class: 'form-control', :required => true %>
+		 		 <%= text_field_tag 'user[address]' , "",class: 'form-control', :required => true %>
 		 			    
 		 			   </div>
 		 			   <div class="form-group">
 		 			    <%= label_tag 'exampleInputPassword1', 'Town', :style =>'' %>
 		 			  
 		 			
-		 			  <%= text_field_tag 'city' , "",class: 'form-control', :required => true %>
+		 			  <%= text_field_tag 'user[city]' , "",class: 'form-control', :required => true %>
 		 			    
 		 			   </div>
 		 			   <div class="form-group">
 		 			    <%= label_tag 'exampleInputPassword1', 'Post Code',:style =>'' %>
 		 			  
-		 			  <%= text_field_tag 'postalcode' , "",class: 'form-control',:required => true %>
+		 			  <%= text_field_tag 'user[postalcode]' , "",class: 'form-control',:required => true %>
 		 			    
 		 			   </div>
 		 			 <div class="form-group">
 		 			    <%= label_tag 'exampleInputPassword1', 'Date Of Birth',:style =>'' %>
 		 			  
-		 			  <%= date_field_tag 'dob' , "",class: 'form-control',:required => true %>
+		 			 <%= date_field_tag 'user[dob]' , "",class: 'form-control',:required => true %>
 		 			    
 		 			   </div>
 		 			<div class="form-group">

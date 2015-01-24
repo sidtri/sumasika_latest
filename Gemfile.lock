@@ -45,6 +45,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     arel (6.0.0)
     bcrypt (3.1.9)
     binding_of_caller (0.7.2)
@@ -70,6 +71,10 @@ GEM
     currencies (0.4.2)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
+    dragonfly (1.0.7)
+      addressable (~> 2.3)
+      multi_json (~> 1.0)
+      rack
     erubis (2.7.0)
     execjs (2.2.2)
     globalid (0.3.0)
@@ -190,6 +195,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   countries
   country_select
+  dragonfly (~> 1.0.7)
   jbuilder (~> 2.0)
   jquery-rails
   money

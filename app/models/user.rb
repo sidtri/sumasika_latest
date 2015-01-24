@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
  has_one :account
  has_many :synthesizes
  validates_uniqueness_of :email
+ dragonfly_accessor :image
 
  def password
     @password ||= Password.new(password_hash)

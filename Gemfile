@@ -50,5 +50,6 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'countries'
 gem 'country_select'
 gem 'money'
+gem 'dragonfly', '~> 1.0.7'
 
 gem 'pry-rails', :group => :development
