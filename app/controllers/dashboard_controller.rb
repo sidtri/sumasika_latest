@@ -26,6 +26,14 @@ before_action :authenticated
     @user=my_session
     @details = my_session.synthesizes
   end	
+
+  def verifications
+
+  end
+
+  def logs
+    
+  end
    
   def settings
      @user=my_session

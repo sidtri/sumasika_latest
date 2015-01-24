@@ -1,5 +1,6 @@
 class MembersController < ApplicationController
-
+before_action :check_email, :only => [:create]
+before_action :validate_captcha, :only => [:create]
   def index
 
   end
@@ -64,5 +65,13 @@ class MembersController < ApplicationController
       help = {:secret => "6LfVSwATAAAAADeCFWoB3bwuiMXjIfhnOgqV2t37", :response => params['g-recaptcha-response'], :remoteip => '127.0.0.1'}
       target.query = URI.encode_www_form(help)
       captcha_valid = Net::HTTP.get(target)
+      unless JSON.parse(captcha_valid)["success"]
+        redirect_to members_new_path, :flash => {:error => "Captcha invalid"}
+      end
+    end
+    def check_email
+      unless User.find_by_email(params[:email]).nil?
+        redirect_to members_new_path, :flash => { :notice => "User already exists with this email"}
+      end
     end
 end

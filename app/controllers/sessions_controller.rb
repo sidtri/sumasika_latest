@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
   	if !@user.nil? && BCrypt::Password.new(@user.password) == params[:password] && @user.active == 1
 		  # need to find alternative to session later on ...
       session[:user_id] = @user.id
-  		redirect_to dashboard_index_path, :flash => { :error => "Logged in" }
+  		redirect_to dashboard_index_path, :flash => { :notice => "Welcome to sumasika" }
   	else
   		redirect_to sessions_new_path , :flash => { :error => "User credentials does not exists" }
   	end
