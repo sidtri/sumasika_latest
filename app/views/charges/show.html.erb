@@ -1,0 +1,94 @@
+<div class="panel panel-default" style="height:37em">
+   <div class="panel-heading">
+      <h3 class="panel-title">
+          <%= image_tag "stripe-logo.png", :class => 'img-thumbnail', :width => '120px' %>
+      </h3>
+
+      <h3>Before You Want Send Money To Any One Check The Details</h3>
+   </div>
+   <div class="panel-body">
+    <div class="row">
+      <div class="col-xs-3">
+        
+      </div>
+      <div class="col-xs-6">
+            <div class="panel panel-default">
+                  <div class="panel-heading" style="background-color:#46DAB8; text-align:center; color:#030000; ">
+                        PAYMENT DETAILS
+                  </div>
+
+
+                  <div class="table-responsive">
+                      <table class="table table-bordered">
+                         <!--  <thead>
+                            <tr>
+
+                              <th></th>
+                              <th>Last Name</th>
+
+                            </tr>
+                          </thead> -->
+                          <tbody>
+                            <tr>
+                                <td>You want to send</td>
+                                <td><%= @paymentdetails.money %></td>
+
+                            </tr>
+                            <tr>
+                                <td>GHS</td>
+                                <td>No Ghs</td>
+
+                            </tr>
+                            <tr>
+                                <td>Receipt Receives</td>
+                                <td>12</td>
+
+                            </tr>
+                            <tr>
+                                <td>Receipt First Name</td>
+                                <td><%= @paymentdetails.first_name %></td>
+
+                            </tr>
+                            <tr>
+                                <td>Receipt Last Name</td>
+                                <td><%= @paymentdetails.last_name %></td>
+
+                            </tr>
+                            <tr>
+                                <td>Receipt MTN Number</td>
+                                <td><%= @paymentdetails.mtn %></td>
+
+                            </tr>
+                          </tbody>
+                      </table>
+                  </div>
+            </div>
+            
+      </div> <!-- colxs9 -->
+    </div>
+    <div class="row">
+   
+    <div class="col-xs-12">
+        <div class="col-xs-4">
+
+        <label style="margin-top: 14px;">Do You Want To Send The Money?</label>
+      </div>
+      <div class="col-xs-3">
+      <a href="<%= charges_path %>?token=<%=params[:token] %>" class="btn btn-primary btn-lg" role="button">
+      Send
+   </a>
+        
+      </div>
+      <div class="col-xs-3">
+      <a href="<%= dashboard_expired_path %>?token=<%= params[:token] %>" class="btn btn-warning btn-lg">Cancel</a>
+      </div>
+       <div class="col-xs-3">
+        
+      </div>
+      
+    </div>
+      
+      
+    </div>
+   </div>
+</div>

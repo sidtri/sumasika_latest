@@ -14,7 +14,7 @@ before_action :authenticated
   	@synthesize.tokener = SecureRandom.urlsafe_base64 
     @synthesize.status = 'pending'
   	if @synthesize.save
-  		redirect_to :controller => :charges, :action => :index, :token => @synthesize.tokener
+  		redirect_to :controller => :charges, :action => :checkdetails, :token => @synthesize.tokener
   	else
   		render :text => 'Something went wrong'
   	end
@@ -27,9 +27,10 @@ before_action :authenticated
    
   def settings
     @settingdetails = my_session
+
   end
 
-  
+  ################## Settings for update####################
   def details_update
     
     @save=my_session.update(:first_name => params[:first_name],:last_name =>params[:last_name],:dob => params[:dob],:email => params[:email],:country => params[:user][:country],:address => params[:address],:postalcode => params[:postalcode])
@@ -47,6 +48,47 @@ before_action :authenticated
     end
     
     
+  end
+  ################################### view password ######################
+  def changepwd
+     
+
+  end
+
+  def updatepwd
+
+     if BCrypt::Password.new(User.find_by_token(params[:token]).password ) == params['oldpwd']
+        if params['newpwd'] == params['confpwd']
+
+            user=User.find_by_token(params[:token])
+            user.password=params['newpwd']
+            if user.save
+
+              redirect_to dashboard_settings_path , :flash => { :notice => "Your password has been changed sucessfully " }
+
+            end
+          else
+             redirect_to dashboard_changepwd_path , :flash => { :error => "Your new and old passwords are doesnot match."}
+          
+        end
+      else
+        redirect_to dashboard_changepwd_path , :flash => { :error => "Please check old password once"}
+
+     end
+     
+     
+  end
+  ################## token expired for checkdetails cancel####################
+  def expired
+
+    @status=Synthesize.find_by_tokener(params[:token]).update(:status => 'expired')
+    if @status
+      redirect_to dashboard_index_path
+    else
+      redirect_to charges_checkdetails_path,  :token => params[:token]
+    end
+
+
   end
   private
   	def params_permit

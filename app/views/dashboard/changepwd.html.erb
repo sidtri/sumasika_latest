@@ -1,0 +1,64 @@
+<div class="panel panel-default" style="height:50em">
+	<div class="panel-heading">
+	      <h3 class="panel-title">
+	         <span class="glyphicon glyphicon-pencil" style="font-size:30px;"></span>
+	      </h3>
+	      <h3>Change The Password</h3>
+	</div>
+	<div class="panel-body">
+			
+	
+		
+			 <div class="row">
+			 <div class="col-xs-2"></div>
+			 	<div class="col-xs-7">
+
+			 		<!-- <div class="row" >
+						<div class="col-xs-1">
+			 				
+			 			</div>
+			 			<div class="col-xs-11">
+			 				<p class="bg-success text-primary text-center" ><span class="glyphicon glyphicon-ok"></span><span style="font-size:15px;">sdafsdfsdgffdgdfgdfsgdfshgdfsh</span></p>
+			 			</div>
+			 		</div> -->
+					
+					<%= form_tag  dashboard_updatepwd_path , :class => 'form-horizontal', :role => 'form' do %>
+						
+						<div class="form-group">
+							<label for="inputPassword3" class="col-xs-4 control-label">Old Password</label>
+							<div class="col-xs-8">
+							<input type="password" name="oldpwd" class="form-control" id="inputPassword3"  />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-xs-4 control-label">New Password</label>
+							<div class="col-xs-8">
+								<input type="password" name="newpwd" class="form-control" id="inputEmail3" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputPassword3" class="col-xs-4 control-label">Conform Password</label>
+							<div class="col-xs-8">
+							<input type="password" name="confpwd" class="form-control" id="inputPassword3"  />
+							</div>
+							<input type="hidden" name="token" value="<%= params[:token] %>" />
+						</div>
+						
+						<div class="form-group">
+						<div class="col-xs-offset-5 col-xs-8">
+						<button type="submit" class="btn btn-primary ">Save</button>
+						</div>
+						</div>
+					<% end %>
+					
+				 </div>
+				 	
+			 </div>
+			 
+
+
+		
+	</div>
+			
+	</div>
+</div>

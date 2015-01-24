@@ -28,10 +28,30 @@
 				}
 				
 			</style>
+<script type="text/javascript">
+    $("document").ready(function(){
+        
+     <% unless flash[:notice].nil? %>
+     
+        $("#notice").modal("toggle");
+       
+    <%end %>
+    })
+</script>
+<script type="text/javascript">
+    $("document").ready(function(){
+        
+     <% unless flash[:error].nil? %>
+     
+        $("#error").modal("toggle");
+       
+    <%end %>
+    })
+</script>
 		
  </head>
  <body id="bgimg">
-	
+	<%=  render :partial => 'layouts/alert' %>
 	  <%= yield %>
 
 	  <%= render :partial => 'layouts/footer' %>

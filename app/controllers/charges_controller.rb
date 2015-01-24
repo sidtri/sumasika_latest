@@ -35,6 +35,17 @@ class ChargesController < ApplicationController
 	  redirect_to charges_path
 	end
 
+	# def checkdetails
+
+	# end
+
+	def show
+
+		@paymentdetails=Synthesize.find_by_tokener(params[:token])
+		
+
+	end
+
 	private
 		def check_token
 			redirect_to dashboard_index_path if Synthesize.find_by_tokener(params[:token]).nil?

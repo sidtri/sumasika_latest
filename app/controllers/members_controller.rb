@@ -53,7 +53,7 @@ class MembersController < ApplicationController
   
   private
   	def req_params
-  		params.permit(:email, :first_name, :last_name, :user, :dob, :address)
+  		params.permit(:email, :first_name, :last_name, :user, :dob, :address, :postalcode)
   	end
     def generate_customer
       Stripe::Customer.create(:email => req_params[:email])

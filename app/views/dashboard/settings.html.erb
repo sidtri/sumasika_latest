@@ -1,4 +1,4 @@
-<div class="panel panel-default" style="height:50em">
+ <div class="panel panel-default" style="height:50em">
 	<div class="panel-heading">
 	      <h3 class="panel-title">
 	         <span class="glyphicon glyphicon-cog" style="font-size:30px;"></span>
@@ -64,7 +64,14 @@
 					 	</div> -->
 					 	<div class="form-group">
 						 	<label for="postcode">Postal Code</label>
-						 	<%= text_field_tag 'postalcode' , @settingdetails['postalcode'],class: 'form-control' %>
+			<%= text_field_tag 'postalcode' , @settingdetails['postalcode'], class: 'form-control' %>
+					 	</div>
+
+					 <div class="form-group">
+					 		
+<a class="btn btn-link " href="<%= dashboard_changepwd_path %>?token=<%= @settingdetails['token'] %>" role="button" style="margin-top: 25px;" >		Change The Password ?
+				</a>
+					 		
 					 	</div>
 					 </div>
 				 </div>

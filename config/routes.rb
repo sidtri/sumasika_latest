@@ -38,6 +38,9 @@ Rails.application.routes.draw do
   post 'dashboard/create'
   post 'dashboard/details_update'
   post 'dashboard/email_update'
+  get 'dashboard/expired'
+  get 'dashboard/changepwd'
+  post 'dashboard/updatepwd'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -56,6 +59,7 @@ Rails.application.routes.draw do
   root 'cras#index'
   post 'cras/contactus' => 'cras#contactus', as: 'cras_contactus'
   resources :charges
+  get 'charges/checkdetails'
 
   
   # Example resource route with options:

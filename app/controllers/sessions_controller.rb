@@ -35,7 +35,6 @@ class SessionsController < ApplicationController
     end
   end
 
-  
   private
     def user_dashboard
       redirect_to dashboard_index_path unless session[:user_id].nil?

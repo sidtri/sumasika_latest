@@ -26,9 +26,32 @@
 					display: block;
 				}
 			</style>
+
+<script type="text/javascript">
+    $("document").ready(function(){
+        
+     <% unless flash[:notice].nil? %>
+     
+        $("#notice").modal("toggle");
+       
+    <%end %>
+    })
+</script>
+<script type="text/javascript">
+    $("document").ready(function(){
+        
+     <% unless flash[:error].nil? %>
+     
+        $("#error").modal("toggle");
+       
+    <%end %>
+    })
+ </script>
 		
  </head>
  <body style="background:#e8ebef">
+
+ <%=  render :partial => 'layouts/alert' %>
   
  <div id="header" class="row">
      <h1><a href="/">Sumasika</a></h1>
