@@ -26,3 +26,13 @@
     </div>
   </div>
 
+<script type="text/javascript">
+    $("document").ready(function(){
+     <% unless flash[:notice].nil? %>
+        $("#notice").modal("toggle");
+     <%end %>
+     <% unless flash[:error].nil? %>
+        $("#error").modal("toggle");
+     <%end %>
+    });
+ </script>

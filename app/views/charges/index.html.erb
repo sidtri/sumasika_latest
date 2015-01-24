@@ -63,7 +63,7 @@
                 <span class="payment-errors text-danger"></span>
                 <div class="row">
                   <div class="col-xs-6">
-                    <%= submit_tag "Make Payment ($#{ @money }) ", :class => 'btn btn-success' %>
+                    <%= button_tag "Make Payment ($#{ @money }) ", :class => 'btn btn-success' %>
                   </div>
                 </div>
             <%end %>
@@ -81,7 +81,6 @@
 
 function stripeResponseHandler(status, response) {
   var $form = $('#payment-form');
-
   if (response.error) {
     // Show the errors on the form
     $form.find('.payment-errors').text(response.error.message).css('display','block');

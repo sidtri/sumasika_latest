@@ -3,7 +3,7 @@ class AdminsController < ApplicationController
   before_action :checkadmin
 
   def index
-     
+    
   end
 
   def past

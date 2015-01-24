@@ -2,6 +2,7 @@ class ChargesController < ApplicationController
 	layout 'dashboard'
 	before_action :authenticated
 	before_action :check_token, :only => [:index]
+    before_action :check_stripe_token, :only => [:create]
 
 	def index
 		s = Synthesize.find_by_tokener(params[:token]).reload
@@ -19,20 +20,25 @@ class ChargesController < ApplicationController
 	  customer = my_customer
 	  customer.description = "Testing description need to update"
 	  customer.card = params[:stripeToken] # obtained with Stripe.js
-	  customer.save
-	  charge = Stripe::Charge.create(
-	    :customer    => customer.id,
-	    :amount      => @amount.to_i,
-	    :description => 'Rails Stripe customer',
-	    :currency    => 'usd'
-	  )
-	  synthesize.status = "charged"
-	  synthesize.save
-
+	  if customer.save
+		  charge = Stripe::Charge.create(
+		    :customer    => customer.id,
+		    :amount      => @amount.to_i,
+		    :description => 'Rails Stripe customer',
+		    :receipt_email => customer.email,
+		    :currency    => 'usd'
+		  )
+		  Event.create(:customer_id => customer.id, :event_id => charge.id)
+		  synthesize.status = "charged"
+		  synthesize.save
+	   else
+	   	synthesize.status = "expired"
+	   	redirect_to dashboard_index_path, :error => "Something went wrong - Maybe wrong credentials"
+	   end
 
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
-	  redirect_to charges_path
+	  redirect_to :controller => 'charges', :action => 'index', :token => params[:tokener]
 	end
 
 	# def checkdetails
@@ -49,5 +55,12 @@ class ChargesController < ApplicationController
 	private
 		def check_token
 			redirect_to dashboard_index_path if Synthesize.find_by_tokener(params[:token]).nil?
+		end
+		def check_stripe_token
+		  binding.pry
+		  if params[:stripeToken].nil?
+			flash[:error] = "May be wrong credentials or you've submitted before page fully loaded"
+			redirect_to :controller => 'charges', :action => 'index', :token => params[:tokener]
+		  end
 		end
 end

@@ -1,7 +1,8 @@
 class DashboardController < ApplicationController
 before_action :authenticated 
   def index
-    @temporary = 1 	
+    @temporary = 1
+
   end
 
   def ghana
@@ -24,6 +25,14 @@ before_action :authenticated
     # binding.pry
     @details = my_session.synthesizes
   end	
+
+  def verifications
+
+  end
+
+  def logs
+    
+  end
    
   def settings
     @settingdetails = my_session
