@@ -41,12 +41,9 @@ class ChargesController < ApplicationController
 	  redirect_to :controller => 'charges', :action => 'index', :token => params[:tokener]
 	end
 
-	# def checkdetails
-
-	# end
-
+	
 	def show
-
+		@user=my_session
 		@paymentdetails=Synthesize.find_by_tokener(params[:token])
 		
 

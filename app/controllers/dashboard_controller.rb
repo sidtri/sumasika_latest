@@ -3,6 +3,11 @@ before_action :authenticated
   def index
     @temporary = 1 	
     @user=my_session
+    countryinfo=Country.new(@user['country'])
+    @symbol=countryinfo.currency['symbol']
+    @currency=countryinfo.currency['code'].downcase 
+
+    # binding.pry
   end
 
   def ghana
@@ -10,6 +15,7 @@ before_action :authenticated
   end
 
   def create
+    binding.pry
   	@synthesize = Synthesize.new(params_permit)
   	@synthesize.user_id = session[:user_id]
   	@synthesize.tokener = SecureRandom.urlsafe_base64 

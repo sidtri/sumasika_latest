@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
   # My Api
   get 'jsoners/ghana/:currency/:money' => 'jsoners#ghana'
+  get 'jsoners/dollars/:currency/:money' => 'jsoners#dollars'
 
   get 'admin' => 'admins#index'
   get 'admin/show/:id' => 'admins#show', as: 'show_admin'
