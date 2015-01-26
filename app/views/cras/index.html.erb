@@ -1,13 +1,29 @@
 <div class="full-module home-header">
     <header class="full_wrapper res_row">
-        <div class="site_container">
+        <div class="site_container" id="header">
              <div class="site_logo"><h2><span style='color:white;font-weight:bold'>SUMASIKA</span></h2></div><!--site_logo-->
              <div class="reglog_btn">
                  <!--  <button class="btn btn-link" style="color:white">How It Works</button>
                   -->
                   <button class="btn btn-link" style="color:white">How it works</button>
                   <!-- <button class="btn btn-link" style="color:white">Login</button> -->
-                <%= link_to 'Login',sessions_new_path, :class=>'btn btn-link', :style=>'color:white'  %>
+                 <%if @user.nil? %>
+                 <%= link_to 'Login',sessions_new_path, :class=>'btn btn-link', :style=>'color:white'  %>
+                 <%else %>
+                  <div class="account-dropdown-view" id="dropdownview" style="cursor:pointer;margin-top:10px">
+                    <a class="account">
+                      <em style="margin-top: -5px;"><%= image_tag @user.image.thumb('24x24#').url, :class => "img-circle" if @user.image_stored? %></em>
+                      <span style="padding-left: 5px;color:white;font-size:12px">Your Account</span>
+                    </a>
+                    <div class="submenu" id="viewsubmenu">
+                      <ul class="root">
+                        <li><a href="#">Your Dashboard</a></li>
+                        <li><a href="#">Account Settings</a></li>
+                        <li><%= link_to 'Sign Out',sessions_destroy_path %></li>
+                      </ul>
+                    </div>
+                  </div>
+                 <%end %>
                  <div class="clear_fix"></div>
              
              </div><!--reglog_btn-->

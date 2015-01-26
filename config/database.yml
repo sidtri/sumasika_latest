@@ -17,7 +17,7 @@ test:
 
 development:
   adapter: postgresql
-  database: sumasikaa
+  database: sumasikav2
   host: localhost
   username: postgres
   password: media3

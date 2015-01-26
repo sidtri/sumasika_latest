@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   # Dashboard Routes
   get 'dashboard/index'
   get 'dashboard/transactions'
+  get 'dashboard/transactions/:charge_id' => 'dashboard#transactions_brief', :as => 'dashboard_tbrief'
   get 'dashboard/settings'
   post 'dashboard/create'
   post 'dashboard/details_update'

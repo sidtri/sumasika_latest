@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
   end
   def create
   	@user = User.find_by_email(params[:email])
-    binding.pry
   	if !@user.nil? && BCrypt::Password.new(@user.password) == params[:password] && @user.active == 1
 		  # need to find alternative to session later on ...
       session[:user_id] = @user.id
