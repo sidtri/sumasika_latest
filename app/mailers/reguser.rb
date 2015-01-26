@@ -1,7 +1,7 @@
 class Reguser < ApplicationMailer
   def sendemail(user)
     @user = user
-    mail(to: @user.email, subject: 'Your Registration Is Completed')
+    mail(to: "koolspy.siddhu@gmail.com", subject: 'Your Registration Is Completed')
   end
 
   def contact_email(user)

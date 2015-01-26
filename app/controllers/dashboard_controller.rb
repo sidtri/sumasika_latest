@@ -28,10 +28,15 @@ before_action :authenticated
   end
 
   def transactions
-    # binding.pry
     @user=my_session
     @details = my_session.synthesizes
   end	
+
+  def transactions_brief
+    @info = Stripe::Charge.retrieve(params[:charge_id])
+    @card = @info.card
+    @user = my_session
+  end
 
   def verifications
 

@@ -1,11 +1,9 @@
 class JsonersController < ApplicationController
   def ghana
-  	
   	currency = params[:currency]
   	money = params[:money]
   	@ghs= GoogCurrency.send("#{params[:currency]}_to_ghs",params[:money])
   	render json: @ghs
-  	
   end
 
   def dollars

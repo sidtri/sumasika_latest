@@ -1,6 +1,6 @@
 class CrasController < ApplicationController
   def index
-  	
+    @user = my_session unless my_session.nil?  	
   end
 
   def howitworks

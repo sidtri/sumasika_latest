@@ -6,6 +6,7 @@ class ChargesController < ApplicationController
 
 	def index
 		s = Synthesize.find_by_tokener(params[:token]).reload
+		@user = my_session
 		if s.status == 'pending'
 			@money = s.money
 		else
@@ -15,6 +16,7 @@ class ChargesController < ApplicationController
 
 	def create
 	  # Amount in cents
+	  @user = my_session
 	  synthesize = Synthesize.find_by_tokener(params[:tokener])
 	  @amount = synthesize.money * 100
 	  customer = my_customer
@@ -28,7 +30,7 @@ class ChargesController < ApplicationController
 		    :receipt_email => customer.email,
 		    :currency    => 'usd'
 		  )
-		  Event.create(:customer_id => customer.id, :event_id => charge.id)
+		  Event.create(:customer_id => customer.id, :event_id => charge.id, :synthesize_id => synthesize.id )
 		  synthesize.status = "charged"
 		  synthesize.save
 	   else
@@ -45,8 +47,6 @@ class ChargesController < ApplicationController
 	def show
 		@user=my_session
 		@paymentdetails=Synthesize.find_by_tokener(params[:token])
-		
-
 	end
 
 	private
@@ -54,7 +54,6 @@ class ChargesController < ApplicationController
 			redirect_to dashboard_index_path if Synthesize.find_by_tokener(params[:token]).nil?
 		end
 		def check_stripe_token
-		  binding.pry
 		  if params[:stripeToken].nil?
 			flash[:error] = "May be wrong credentials or you've submitted before page fully loaded"
 			redirect_to :controller => 'charges', :action => 'index', :token => params[:tokener]

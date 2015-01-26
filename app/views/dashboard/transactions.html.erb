@@ -1,40 +1,42 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
-	      <h3 class="panel-title">
-	         <span class="glyphicon glyphicon-repeat" style="font-size:30px;"></span>
-	      </h3>
-	      <h3>Previous transactions</h3>
+	    <h3>Previous transactions</h3>
 	</div>
-	<div class="panel-body" style="text-align:center">
-		<% @details.each_with_index do |data, index| %>
-			
-				<div class="row">
-				<div class="col-xs-7">
-				<div class="well">
-				<dl class="dl-horizontal">
-  					<dt>Name:</dt>
-  					<dd><%= data.first_name+data.last_name %></dd>
-  					<dt>Amount:</dt>
-  					<dd><%= data.money %>USD → £7,968.23 GBP  </dd>
-  					<dt>MTN Number:</dt>
-  					<dd><%= data.mtn %></dd>
-  					<dt>Fee:</dt>
-  					<dd>&pound;191.44</dd>
-  					<dt>Date:</dt>
-  					<dd><%= data.created_at.strftime("%x") %> UTC</dd>
-  					<dt>Status:</dt>
-  					<dd><%= data.status %></dd>
-  					<dt>Description</dt>
-  					<dd>Rails Stripe customer</dd>
-				</dl>
-				</div>
-				</div>
-				</div>
-				
-			
-		<%end %>
-			
+	<div class="panel-body">
+		<div class="panel panel-info">
+			<div class="panel-heading"></div>
+			<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Charge Id</th>
+					<th>Sender Name</th>
+					<th>Amount</th>
+					<th>MTN Number</th>
+					<th>Fee</th>
+					<th>Date</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+			<% @details.each_with_index do |data, index| %>
+				<tr>
+					<td><a href="<%=dashboard_tbrief_path(data.event.event_id)%>" class='label label-primary'><%=data.event.event_id.truncate(12) %></a></td> 
+					<td><%= data.first_name.capitalize + " " + data.last_name.capitalize %></td> 
+					<td><%= data.money %>USD → £7,968.23 GBP  </td> 
+					<td><%= data.mtn %></td> 
+					<td>&pound;191.44</td> 
+					<td><%= data.created_at.strftime("%x") %> UTC</td> 
+					<td>Rails Stripe customer</td> 	
+				</tr>
+			<%end %>
+			<%if @details.blank? %>
+			<tr>
+				<td colspan="5">No previous transactions as per our record</td>
+				<td colspan="2"><a href="<%=dashboard_index_path %>" class='btn  btn-default'>Send money now</a></td>
+			</tr>
+			<%end %>
+			</tbody>		
+			</table>
+		</div>
 	</div>
-     
 </div>
-

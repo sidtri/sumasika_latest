@@ -1,0 +1,50 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+	    <h3><b><%=@info.currency.upcase %> <%= (@info.amount/100).to_f %></b><br><blockquote><%= @info.id %></blockquote></h3>
+	    
+	</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-xs-12">
+				<h4>Payment Details</h4>
+			</div>
+			<div class="col-xs-12">
+				<div class="well">
+					<dl class="dl-horizontal">
+					  <dt>Amount</dt>
+					  <dd><%=@info.amount/100 %> <%=@info.currency.upcase %> </dd>
+					  <dt>Fees</dt>
+					  <dd></dd>
+					  <dt>Date</dt>
+					  <dd><%= Time.at(@info.created).utc%></dd>
+					  <dt>Paid</dt>
+					  <dd><span class='label label-info'><%=@info.paid %></span></dd>
+					  <dt>Description</dt>
+					  <dd><%=@info.description %></dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<h4>Card Details</h4>
+			</div>
+			<div class="col-xs-12">
+				<div class="well">
+					<dl class="dl-horizontal">
+					  <dt>Id</dt>
+					  <dd><%= @info.id %></dd>
+					  <dt>Number</dt>
+					  <dd>XXXX XXXX XXXX <%= @card.last4%></dd>
+					  <dt>Fingerprint</dt>
+					  <dd><%=@card.fingerprint%></dd>
+					  <dt>Expires</dt>
+					  <dd><%=@card.exp_month %> <%=@card.exp_year %></dd>
+					  <dt>Type</dt>
+					  <dd><%= @card.brand %></dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
