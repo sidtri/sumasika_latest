@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <style type="text/css">
+      .outer
+      {
+        width: 400px;
+        height: 210px;
+        background-color: #FAF7F7; 
+        padding: 1px 9px;
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="outer">
+      <p>Hello <%= @user.first_name %> <%= @user.last_name %> ,</p>
+      <p>
+        To reset your password, please click on this link</br>
+        <a href="http://localhost:3000<%= sessions_updatepwd_path(@user.token) %>">http://localhost:3000<%= sessions_updatepwd_path(@user.token)%></a> 
+      </p>
+      <p>
+        once you've reset your password ,you will be able to countinue with the signin process
+      </p>
+      <p>
+       Sincerely,
+      </p>
+      <p>
+      Sumasika.
+      </p>
+      
+      
+    </div>
+  </body>
+</html>

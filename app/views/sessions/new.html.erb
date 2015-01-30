@@ -19,7 +19,14 @@
 			    <%= label_tag 'exampleInputPassword1', 'Password' %>
 			    <%= password_field_tag 'password' , '',class: 'form-control',placeholder: 'Enter password', :required => true %>
 			  </div>
-			   <%= submit_tag 'Login',class: 'btn btn-success',name: 'login' %>
+			  <div class="row">
+			  <div class="col-xs-5">
+			   		<%= submit_tag 'Login',class: 'btn btn-success',name: 'login' %>
+			  </div>
+			  <div class="col-xs-6">
+			   		<%= link_to 'Forgotten your password?', sessions_forgetpwd_path , class: 'btn btn-sucess' %>
+			   </div>
+			  </div>
 			<% end -%>
 		</div>
 	</div>

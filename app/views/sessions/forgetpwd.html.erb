@@ -1,0 +1,36 @@
+<div class="site_container" style="margin-top:55px;">
+	<div class="row" >
+	<div class="col-xs-6">
+		<div class="row" style="text-align:center; position:fixed;">
+		<h1 class="signuphed">Join Sumasika</h1>
+		<h3 class="signuphed3">or <%= link_to 'Signup', members_new_path %></h3>
+		</div>
+	</div>
+	<div class="col-xs-6">
+		<div class="well">
+			
+			<%= form_tag sessions_resetemail_path, :class => 'form' do |f|   %>
+				 <div class="form-group">
+				  <strong>Forgotten your password?</strong>
+			     	<%= label_tag 'exampleInputEmail1', "Enter your email address and we'll help you reset your password." %>
+				    <!-- <label for="exampleInputEmail1">Email address</label> -->
+				    <%= text_field_tag 'email' , "",class: 'form-control',placeholder: 'Enter Email',:required => true %>
+				  </div>
+				  
+				  <div class="row">
+
+					  <div class="col-xs-5">
+					   		<%= submit_tag 'Continue',class: 'btn btn-success',name: 'login' %>
+					  </div>
+				  
+				  </div>
+			<% end -%>
+		</div>
+	</div>
+	<!-- <div class="row">
+		<div class="col-xs-4">
+			<span>Dont Have An Account?</span>
+			<a href="#">Sign up</a>
+		</div>
+	</div> -->
+</div>

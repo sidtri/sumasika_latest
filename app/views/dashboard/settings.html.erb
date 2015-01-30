@@ -7,17 +7,8 @@
 	</div>
 	<div class="panel-body">
 			
-	<%= form_tag dashboard_details_update_path, :class => 'form' do |f| %>
-	<% if flash[:error] %> 
-	<div class="row">
-		<div class="col-xs-12">
-			<div class="alert alert-success" role="alert" style="text-align: center;">
-				<span class="glyphicon glyphicon-saved" style="font-size:20px;"></span>
-				<span style="font-size:20px;"><%= flash[:error] %></span> 
-			</div>
-		</div>
-	</div>
-		<% end %>
+	<%= form_for @userform , :url => dashboard_details_update_path, :class => 'form' do |f| %>
+	
 		
 			 <div class="row">
 			 	<div class="col-xs-12 col-xs-push-2">
@@ -40,6 +31,18 @@
 						 <div class="form-group">
 						 	<label for="email">Email</label>
 							<%= text_field_tag 'email' ,  @settingdetails['email']  ,class: 'form-control' %>
+						 </div>
+						 <div class="form-group">
+						 	<label for="photo">Photo</label>
+							<!-- <input type="file" name="photo" id="photo" class="form-control"> -->
+							<%= f.file_field :image , class: 'form-control' ,:required => true  %>
+						 </div>
+						 <div class="form-group">
+						 <div class="row">
+							 <div class="col-xs-12" style="text-align: center;">
+							 	<%= image_tag @settingdetails.image.thumb('50x50#').url, :class => "img-thumbnail"  %>
+							 </div>
+						 </div>
 						 </div>
 
 
@@ -67,12 +70,14 @@
 			<%= text_field_tag 'postalcode' , @settingdetails['postalcode'], class: 'form-control' %>
 					 	</div>
 
+
+
 					 <div class="form-group">
 					 		
 <a class="btn btn-link " href="<%= dashboard_changepwd_path %>?token=<%= @settingdetails['token'] %>" role="button" style="margin-top: 25px;" >		Change Password ?
 				</a>
 					 		
-					 	</div>
+					 </div>
 					 </div>
 				 </div>
 				 	

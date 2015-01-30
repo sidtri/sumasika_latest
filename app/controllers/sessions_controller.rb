@@ -35,6 +35,47 @@ class SessionsController < ApplicationController
     end
   end
 
+  ##############################Forgot password###############################################
+  def forgetpwd
+      
+  end
+
+  def resetemail
+      a=params.permit(:email)
+      @user=User.find_by_email(a['email'])
+
+      unless @user.nil?
+           
+           Reguser.forgot_pwd(@user).deliver_now 
+           redirect_to sessions_forgetpwd_path , :flash => { :notice => 'You can go for reset the password in to email '}
+      else
+          redirect_to sessions_forgetpwd_path , :flash => { :error => 'You have enterd email is wrong please enter correct email address '}
+      end
+
+      
+  end
+
+  def updatepwd
+
+
+  end
+
+  def resetpwd
+    if params[:newpwd] == params[:oldpwd]
+
+       user=User.find_by_token(params[:token])
+      user.password=params['newpwd']
+      if user.save
+        redirect_to sessions_new_path , :flash => { :notice => 'your password is changed sucessfully please login here'}
+      end
+
+
+    else
+      redirect_to sessions_updatepwd_path(params[:token]) , :flash=>{ :error =>'your new password and old password dose not match'}
+
+    end
+  end
+
   private
     def user_dashboard
       redirect_to dashboard_index_path unless session[:user_id].nil?

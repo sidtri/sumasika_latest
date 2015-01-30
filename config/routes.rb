@@ -31,6 +31,10 @@ Rails.application.routes.draw do
   get 'admin/sessions/new' => 'sessions#admin'
   post 'admin/sessions/create' => 'sessions#creators'
   get 'admin/sessions/destroy' => 'villian#admin_destroy'
+  get 'sessions/forgetpwd'
+  post 'sessions/resetemail'
+  get 'sessions/updatepwd/:token' => 'sessions#updatepwd', as: 'sessions_updatepwd'
+  post 'sessions/resetpwd'
   
   # Dashboard Routes
   get 'dashboard/index'
