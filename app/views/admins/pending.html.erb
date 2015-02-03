@@ -13,6 +13,7 @@
 						<th>Receipient Mobile number</th>
 						<th>Money</th>
 						<th>Sent Date</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -25,6 +26,7 @@
 						<td><code><%= data.mtn %></code></td>
 						<td>$ <%= data.money %></td>
 						<td><%= data.created_at.strftime("%x") %> UTC</td>
+						<td><a href="<%= show_admin_path(data.id) %>"  class="btn btn-success" style="padding: 1px 6px;"> Approve </a></td>
 					</tr>
 				  <%end%>
 				 <%end %>

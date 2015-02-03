@@ -110,6 +110,7 @@
                      </dl>
                     </div>
 			</div>
+
 			<div class="col-xs-6">				        
                  <div class="form-group">
                   <dl class="dl-horizontal">
@@ -119,13 +120,25 @@
 	                 <dd>
 	                        <div class="input-group">
 	                           <div class="input-group-addon">MTN</div>
-	                           <input type="text" class="form-control" id="mtn" name="mtn" style="width:139px">
+	                           <input type="text" class="form-control" id="mtn" name="mtn" style="width:139px"> 
+	                           <a href="javascript:void(0)"  name="verify" id="verify" value="verify" class="btn btn-primary active">
+                 	verify
+                 </a>
 	                        </div>
 	                  </dd>
 	                 </dl>
 	             </div>
                
 			</div>
+			<!-- <div class="col-xs-6">				        
+                 <div class="form-group">
+        <a href="javascript:void(0)"  name="verify" id="verify" value="verify" class="btn btn-primary active">
+                 	verify
+                 </a>
+
+	             </div>
+               
+			</div> -->
 			</div> <!-- Receipient Details -->
       <hr> 
        <input type="submit" class="btn btn-success pull-right" value="Next">
@@ -159,6 +172,29 @@ $(document).ready(function(){
 		});
 
 	})
+
+	
+	$( "#verify" ).click(function() {
+
+			var mtnval= $('#mtn').val();
+			var mtnno = mtnval.split('+')[1]
+			$.ajax({
+  			  url: "<%=root_url %>jsoners/sendmsg/"+mtnno,
+  			  context: document.body
+			}).done(function(r) {
+
+             	if( r == "queued")
+			 	{
+			 		$("#mtn").css("border-color", "#3c763d");
+			 	}
+			 	else
+			 	{
+			 		$("#mtn").css("border-color", "red");	
+			 	}
+			
+		});
+
+	});
 
 
 });

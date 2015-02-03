@@ -42,8 +42,9 @@ before_action :validate_captcha, :only => [:create]
 
   def creators
     @manager = Manager.new(req_params)
+    
     @manager.country = params[:user][:country]
-    @manager.password = params[:password]
+    @manager.password = params[:user][:password]
     @manager.active = false
     if @manager.save
       redirect_to admin_members_new_path, :notice => "Completed, Admin needs to verify your account"
@@ -52,10 +53,11 @@ before_action :validate_captcha, :only => [:create]
     end
   end
 
+
   
   private
   	def req_params
-  		params.require("user").permit(:email, :first_name, :last_name, :user, :dob, :address, :postalcode, :image)
+  		params.require("user").permit(:email, :first_name, :last_name, :dob, :address, :postalcode, :image)
   	end
     def generate_customer
       Stripe::Customer.create(:email => req_params[:email])
