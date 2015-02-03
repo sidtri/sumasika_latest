@@ -53,3 +53,4 @@ gem 'money'
 gem 'dragonfly', '~> 1.0.7'
 gem 'goog_currency'
 gem 'pry-rails', :group => :development
+gem 'twilio-ruby', '~> 3.12'
