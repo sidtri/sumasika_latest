@@ -22,11 +22,11 @@
 				<tr>
 					<td><a href="<%=dashboard_tbrief_path(data.event.event_id)%>" class='label label-primary'><%=data.event.event_id.truncate(12) %></a></td> 
 					<td><%= data.first_name.capitalize + " " + data.last_name.capitalize %></td> 
-					<td><%= data.money %>USD → £7,968.23 GBP  </td> 
+					<td><%= data.money %>USD → £......... GBP  </td> 
 					<td><%= data.mtn %></td> 
-					<td>&pound;191.44</td> 
+					<td>&pound;.........</td> 
 					<td><%= data.created_at.strftime("%x") %> UTC</td> 
-					<td>Rails Stripe customer</td> 	
+					<td>..........</td> 	
 				</tr>
 			<%end %>
 			<%if @details.blank? %>

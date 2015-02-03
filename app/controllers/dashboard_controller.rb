@@ -15,8 +15,7 @@ before_action :authenticated
   end
 
   def create
-    binding.pry
-  	@synthesize = Synthesize.new(params_permit)
+    @synthesize = Synthesize.new(params_permit)
   	@synthesize.user_id = session[:user_id]
   	@synthesize.tokener = SecureRandom.urlsafe_base64 
     @synthesize.status = 'pending'

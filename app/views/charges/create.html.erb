@@ -1,45 +1,43 @@
 <div class="panel panel-default">
- <div class="panel-heading" style="padding:0px; text-align:center; background-color:#90F185;">
-    <span class="glyphicon glyphicon-ok" style="font-size: 65px;"></span>
-	<h3>Your payment has been submitted successfully</h3>
+ <div class="panel-heading" style= "text-align:center;background: #E4DDDD">
+    <!-- <span class="glyphicon glyphicon-ok" style="font-size: 42px;"></span> -->
+	<h2>$10.00 at sumasika</h2>
+	<hr>
+	<label for="4242"><b>XXXX XXXX XXXX 4242</b></label>
  </div>
  <div class="panel-body">
- 	<div class="row">
-	 	<div class="col-xs-6 col-xs-push-3">
-			<div class="panel panel-default">
-				<div class="panel-body" style="text-align:center">
-					<table width="300">
-						<tr>
-							<td>Total Amount:</td>
-							<td>$<%= @amount/100 %></td>
+	<table class = "table table-hover">
+		<thead class="thead" style="background:#BEB1B1;">
+	  <tr>
+      <th class ="text-center" >January26,2015</th>
+      <th class ="text-center">#1559-2372</th>
+      </tr>
 
-						</tr>
-						<tr>
-							<td>Funding Source</td>
-							<td></td>
+		</thead>
+		<tbody>
+    <tr style="color:#808080">
+     
+      <td class="text-center">Description </td>
+      <td class="text-center" >Price</td>
+      
+    </tr>
+    <tr>
+    	<td class="text-center">Rails Stripe customer </td>
+      <td class="text-center" > <%= @amount/100 %> </td>
+    </tr>
+    <tr>
+      <td class="text-center">Reference id</td>
+      <td class="text-center" > <b><%=params[:tokener] %></b> </td>
+    </tr>
 
-						</tr>
-						<tr>
-							<td>Job reference id</td>
-							<td><%= params[:tokener] %></td>
-
-						</tr>
-						<tr>
-							<td>Status</td>
-							<td>Pending</td>
-
-						</tr>
-						
-					</table>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-12 " style="text-align:center;">
-					<strong>Did you know?</strong>
-					<span>Lorum ipsum dolar Lorum ipsum dolar Lorum ipsum</span>
-				</div>
-			</div>
-	 	</div>
- 	</div>
+    </tbody>
+	</table>
+	<div class="panel-body" style= "text-align:center;background: #E4DDDD">
+		<h4>You can contact us with any questions by emailing</h4>
+		<a href="nanaoforibrown@aol.com">nanaoforibrown@aol.com</a>
+		<hr>
+		<p style="text-align:center">Something wrong with the email? View it in your browser.</p>
+		<p style="text-align:center">You are receiving this email because you made a purchase at <a href="www.sumasika.com" style="color:blue">sumasika</a></p>
+	</div>
 </div>
 				
