@@ -46,31 +46,19 @@ before_action :authenticated
   end
    
   def settings
-    @userform= User.new()
+     @userform= User.new()
      @user=my_session
-    @settingdetails = my_session
-
+     @settingdetails = my_session
   end
 
   ################## Settings for update####################
   def details_update
-
-    
     @save=my_session.update(:first_name => params[:first_name],:last_name =>params[:last_name],:dob => params[:dob],:email => params[:email],:country => params[:user][:country],:address => params[:address],:postalcode => params[:postalcode],:image => params[:user][:image])
-
-    
-
     if @save
-
-      redirect_to  dashboard_settings_path , :flash => { :error => "Your Account is Updated sucessfully" }  
-
+      redirect_to  dashboard_settings_path , :flash => { :notice => "Your Account is Updated sucessfully" }  
     else
-
       redirect_to  dashboard_settings_path , :flash => { :error => "Your Account is Updated  Failed" }  
-
     end
-    
-    
   end
   ################################### view password ######################
   def changepwd
