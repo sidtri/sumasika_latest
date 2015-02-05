@@ -1,7 +1,7 @@
 <div class="panel panel-default">
  <div class="panel-heading" style= "text-align:center;background: #E4DDDD">
     <!-- <span class="glyphicon glyphicon-ok" style="font-size: 42px;"></span> -->
-	<h2>$10.00 at sumasika</h2>
+	<h2>$<%=@amount/100%> at sumasika</h2>
 	<hr>
 	<label for="4242"><b>XXXX XXXX XXXX 4242</b></label>
  </div>
@@ -23,7 +23,7 @@
     </tr>
     <tr>
     	<td class="text-center">Rails Stripe customer </td>
-      <td class="text-center" > <%= @amount/100 %> </td>
+      <td class="text-center" > <%= @amount/100 %></td>
     </tr>
     <tr>
       <td class="text-center">Reference id</td>

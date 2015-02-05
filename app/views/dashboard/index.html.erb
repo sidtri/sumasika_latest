@@ -119,11 +119,18 @@
 	                           <a href="javascript:void(0)"  name="verify" id="verify" value="verify" class="btn btn-primary active">
                  	verify
                  </a>
+
+
 	                        </div>
+
+
 	                  </dd>
 	                 </dl>
 	             </div>
                
+			</div>
+			<div class="col-xs-8" style="text-align:center;margin-top:-20px;">
+			<label id="alert"> </label>
 			</div>
 			<!-- <div class="col-xs-6">				        
                  <div class="form-group">
@@ -136,7 +143,7 @@
 			</div> -->
 			</div> <!-- Receipient Details -->
       <hr> 
-       <input type="submit" class="btn btn-success pull-right" value="Next">
+       <input type="submit" class="btn btn-success pull-right disabled" id="buttonid" value="Next">
      </div>
 
 </div>
@@ -174,17 +181,22 @@ $(document).ready(function(){
 			var mtnval= $('#mtn').val();
 			var mtnno = mtnval.split('+')[1]
 			$.ajax({
-  			  url: "<%=root_url %>jsoners/sendmsg/"+mtnno,
+  			  url: "<%=root_url %>jsoners/validator/"+mtnno,
   			  context: document.body
 			}).done(function(r) {
-
-             	if( r == "queued")
+				console.log(r);
+             	if( r == 'true')
 			 	{
+
 			 		$("#mtn").css("border-color", "#3c763d");
+			 			$("#alert").html("Your mtn number verified successfully");
+			 			$('#buttonid').removeClass( "disabled" );
 			 	}
 			 	else
 			 	{
 			 		$("#mtn").css("border-color", "red");	
+			 		$("#alert").html("Enter mtn mobile number with country code. Eg:: +233 244 2120 125");
+			 			
 			 	}
 			
 		});

@@ -27,4 +27,10 @@ class JsonersController < ApplicationController
     render text: false
 
   end
+
+  def valid
+    mtn = params[:mtn] 
+    result = Phonelib.valid? mtn
+    render text: result
+  end
 end
