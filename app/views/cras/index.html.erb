@@ -1,277 +1,45 @@
-<div class="full-module home-header">
-    <header class="full_wrapper res_row">
-        <div class="site_container" id="header">
-             <div class="site_logo"><h2><span style='color:white;font-weight:bold'>SUMASIKA</span></h2></div><!--site_logo-->
-             <div class="reglog_btn">
-                 <!--  <button class="btn btn-link" style="color:white">How It Works</button>
-                  -->
-                  <button class="btn btn-link" style="color:white">How it works</button>
-                  <!-- <button class="btn btn-link" style="color:white">Login</button> -->
-                 <%if @user.nil? %>
-                 <%= link_to 'Login',sessions_new_path, :class=>'btn btn-link', :style=>'color:white'  %>
-                 <%else %>
-                  <div class="account-dropdown-view" id="dropdownview" style="cursor:pointer;margin-top:10px">
-                    <a class="account">
-                      <em style="margin-top: -5px;"><%= image_tag @user.image.thumb('24x24#').url, :class => "img-circle" if @user.image_stored? %></em>
-                      <span style="padding-left: 5px;color:white;font-size:12px">Your Account</span>
-                    </a>
-                    <div class="submenu" id="viewsubmenu">
-                      <ul class="root">
-                        <li><a href="#">Your Dashboard</a></li>
-                        <li><a href="#">Account Settings</a></li>
-                        <li><%= link_to 'Sign Out',sessions_destroy_path %></li>
-                      </ul>
-                    </div>
-                  </div>
-                 <%end %>
-                 <div class="clear_fix"></div>
-             
-             </div><!--reglog_btn-->
+<%= render :partial => 'cras/home' %>
 
-          <div class="clear_fix"></div>
-        </div>
-    </header>
-    <div class="clear_fix"></div>
-    <div class="row site_container sendmoney">
-      <div class="medium-12 columns">
-        <h1>Send Money to Ghana - Cheaper and Faster.</h1>
-        <h3 class="show-for-medium-up">Try the hottest new way to send or pay</h3>
-        <div class="sign-up-button">
-        <!-- <button class="btn btn-success" style="margin-top:35px">SIGN UP NOW</button> -->
-        <%= link_to 'SIGN UP NOW',members_new_path,:class=>'btn btn-success',:style=>'margin-top:35px'  %>
-        </div>
-      </div>
-    </div>
-</div>
-  
- <div class="clear_fix"></div>
+      <!-- HEADLINE
 
+      ================================= -->
 
-<div class="container" style="padding-bottom:65px;">
-  <div class="row" style="text-align:center">
-    <h2>Compare Rates & Convert</h2>
-    <h4><kbd>If i send USD 100 to my family ghana, I pay</kbd></h4>
-  </div>
-  <div class="row" style="text-align:center;margin-top:35px">
-    <div class="col-sm-4">
-      <h3><span>USD 11%</span></h3>
-      <img src="assets/ria-logo.png" alt="Ria logo" style="width:200px;height:55px">
-    </div>
-    <div class="col-sm-4">
-      <h3><span>USD 7.9%</span></h3>
-      <h2 style="margin-top:26px;font-weight:bold;color:white"><kbd>SUMASIKA</kbd></h2>
-    </div>
-    <div class="col-sm-4">
-      <h3><span>USD 9.99%</span></h3>
-      <img src="assets/moneytransfer_img_17.png" alt="money gram" style="width:200px">
-    </div>
-  </div>
-  <div class="row" style="text-align:center;margin-top:35px">
-    <h4 style="text-align:center"><i>Save up to <b>4%</b> with SUMASIKA!</i></h4><br>
-   <!--  <button class="btn btn-success">Send Money Now!</button> -->
-    <%= link_to 'Send Money Now!',dashboard_index_path,:class=>'btn btn-success' %>
-  </div>
-</div>
-<!--How it work -->
-  <div class="full_wrapper res_row howit_work">
-       <div class="site_container">
+      <%= render :partial => 'cras/headline' %>
+
+      <!-- DESCRIPTION
+      ================================= -->
       
-           <h2 style="text-align:center">HOW IT WORKS</h2>
-          
-          
-          <div class="tansproc_wrap"> 
-           <div class="transfer_process">
+      <%= render :partial => 'cras/aboutsumasika' %>
 
-               <div class="transfer_process_img"><img src="assets/transmoney_img_23.png"></div>
-               <div class="transfer_process_tit">Send Money form your XXXXXX</div>
-           
-           </div> 
- 
+      <!-- BENEFITS
+      ================================= -->
+      <%= render :partial => 'cras/benfites' %>
 
-           <div class="transfer_process1">
-              <img src="assets/arrow_32.png">
-           </div> 
-           
-           <div class="transfer_process3">
-              <img src="assets/arrow_33.png">
-           </div> 
- 
+      <!-- HOW IT WORKS
+      ================================= -->
+      <%= render :partial => 'cras/howitworks' %>
 
-           <div class="transfer_process">
+      <!-- NUMBERS
+      ================================= -->
+      <%= render :partial => 'cras/numbers' %>
 
-               <div class="transfer_process_img"><img src="assets/transmoney_img_25.png"></div>
-               <div class="transfer_process_tit">We Convert it to Ghana Cedis</div>
-           
-           </div> 
- 
+      <!-- VIDEO SECTION
+      ================================= -->
+      <%= render :partial => 'cras/video' %>
 
-           <div class="transfer_process1">
-              <img src="assets/arrow_32.png">
-           </div> 
-
-           <div class="transfer_process3">
-              <img src="assets/arrow_33.png">
-           </div> 
-
-           <div class="transfer_process">
-
-               <div class="transfer_process_img"><img src="assets/transmoney_img_27.png"></div>
-               <div class="transfer_process_tit">Recipient receives mobile money instantly</div>
-           
-           </div> 
- 
-           <div class="transfer_process1">
-              Or
-           </div> 
-           <div class="transfer_process3">
-              Or
-           </div> 
-
-           <div class="transfer_process">
-
-               <div class="transfer_process_img"><img src="assets/transmoney_img_29.png"></div>
-               <div class="transfer_process_tit">Receives Money from Authorized Agencies</div>
-           
-           </div> 
- 
-
-           <div class="clear_fix"></div>
-
-      </div><!--tansproc_wrap-->
-      
-      
-       </div>
-  </div>
- <div class="clear_fix"></div>
+      <!-- TEAM
+      ================================= -->
+      <%= render :partial => 'cras/team' %>
 
 
+      <!-- PRICING SECTION
+      ================================= -->
+      <%= render :partial => 'cras/pricing' %>
 
+      <!-- TESTIMONIALS
+      ================================= -->
+      <%= render :partial => 'cras/testmonial' %>
 
-
-<!-- end of how it work-->
-
-<!--send money-->
-
-    <div class="full_wrapper res_row sendmoney_wrap">
-      <div class="site_container">
-          
-          <div class="sendmoney_left">
-          <h2>SEND MORE MONEY TO <span>GHANA</span></h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-            <form action="#" class="form-horizontal"></form>
-             <div class="form-group">
-              <div class="col-xs-8">
-                <input class="form-control" type="text" placeholder="$0.00">           
-              </div>
-              <div class="col-xs-4">
-                <button class="btn btn-default">Send Now </button>
-              </div>
-              </div>
-            <div class="clear_fix"></div>
-          </div><!--sendmoney_left-->
-
-      </div>
-   </div>
-
-<div class="clear_fix"></div>
-
-<!--End send money-->
-
-<div class="contactme">
-  <div class="site_container" style="margin-bottom:15px">
-        <div class="row">
-          <div class="col-lg-12">
-            <h2 style="text-align:center"><span class="headline-lines">CONTACT US</span></h2>
-          </div> <!-- end col-lg-12 -->
-        </div> <!-- end row -->
-        
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            <p>I have traced the Rebel spies to her. Now she is my only link to finding their secret base. You don't believe in the Force, do you? All right. Well, take care of yourself, Han. Hokey religions and ancient weapons are no match for a good blaster at your side.</p>
-          </div> <!-- end col-lg-6 -->
-        
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            <p class="headline-text">Send a distress signal, and inform the Senate that all on board were killed. Alderaan? I'm not going to Alderaan. I've got to go home. It's late, I'm in for it as it is. She must have hidden the plans in the escape pod.</p>
-          </div> <!-- end col-lg-6 -->
-        </div> <!-- end row -->
-        
-        <div class="row">
-          
-          <div class="col-lg-6 col-md-6 col-sm-8">
-            <!-- contact form begins -->
-                      <div class="quform-outer quform-theme-custom-custom">
-                          <%= form_tag cras_contactus_path ,:class=> 'quform'  do %>
-                                            
-                                                        <div class="quform-inner">
-                                                            
-                                                            <div class="quform-elements">
-                                                                                                    
-                                                                <!-- begin name input element -->
-                                                                <div class="quform-element quform-element-text">
-                                                                    <div class="quform-spacer">
-                                                                        <div class="quform-input">
-                                                                          <!-- <input id="name" type="text" class="form-control" name="name" placeholder="Name"> -->
-                                                                        <%= text_field_tag 'name' , "",class: 'form-control' ,placeholder: 'Name' %>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- end name input element -->
-                                
-                                                                <!-- begin email input element -->
-                                                                <div class="quform-element quform-element-text">
-                                                                    <div class="quform-spacer">
-                                                                        <div class="quform-input">
-                                                                         <!--  <input id="email" type="text" class="form-control" name="email" placeholder="Email"> -->
-                                                                      <%= text_field_tag 'email' , "",class: 'form-control' ,placeholder: 'Email' %>
-
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- end email input element -->
-                                                                
-                                                                <!-- begin Textarea element -->
-                                                                <div class="quform-element quform-element-textarea quform-huge">
-                                                                    <div class="quform-spacer">
-                                                                        <div class="quform-input">
-                                                                         <!--  <textarea id="message" class="form-control" name="message" placeholder="Message"></textarea> -->
-                                                            <%= text_area_tag 'msg','',class: 'form-control', rows: 10, cols: 25 ,placeholder: "Message" %>
-
-
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- end Textarea element -->
-                                                                                    
-                                                                <!-- begin Submit button -->
-                                                                <div class="quform-submit">
-                                                                    <div class="quform-submit-inner">
-                                                                   <!--  <button type="submit" value="Send" class="btn btn-default"> -->
-                                                                  <%= submit_tag 'Send',class: 'btn btn-default',name: 'send' %>
-
-                                                                   
-                                                                    </div>
-                                                                    <div class="quform-loading-wrap"><span class="quform-loading"></span></div>
-                                                                </div>
-                                                                <!-- end Submit button -->
-                                                                
-                                                           </div>
-                                                       </div>
-                                                    <% end %>
-                      </div>
-                      <!-- contact form ends -->
-          </div> <!-- end col-lg-6 -->
-          
-          <div class="col-lg-6 col-md-6 col-sm-4">
-            <div class="contact-info">
-              <p><i class="glyphicon glyphicon-earphone"></i> +123 456 789</p>
-              <p><i class="glyphicon glyphicon-envelope"></i> youremail@here.com</p>
-              <p><i class="glyphicon glyphicon-home"></i> 767 Fifth Ave.<br>New York, NY 10153</p>
-            </div> <!-- end contact-info -->
-          </div> <!-- end col-lg-6 -->
-          
-        </div> <!-- end row -->
-      </div>
-
-</div>   
+      <!-- CLOSING
+      ================================= -->
+      <%= render :partial => 'cras/closing' %>
