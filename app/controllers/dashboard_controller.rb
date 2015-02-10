@@ -53,8 +53,9 @@ before_action :authenticated
 
   ################## Settings for update####################
   def details_update
-    @save=my_session.update(:first_name => params[:first_name],:last_name =>params[:last_name],:dob => params[:dob],:email => params[:email],:country => params[:user][:country],:address => params[:address],:postalcode => params[:postalcode],:image => params[:user][:image])
+    @save=my_session.update(:first_name => params[:first_name],:last_name =>params[:last_name],:dob => params[:dob],:email => params[:email],:country => params[:user][:country],:address => params[:address],:postalcode => params[:postalcode])
     if @save
+      my_session.update(:image => params[:user][:image]) unless params[:user][:image].nil?
       redirect_to  dashboard_settings_path , :flash => { :notice => "Your Account is Updated sucessfully" }  
     else
       redirect_to  dashboard_settings_path , :flash => { :error => "Your Account is Updated  Failed" }  
