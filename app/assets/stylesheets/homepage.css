@@ -10,9 +10,14 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bootstrap
- *= require admin
- *= require font
- *= require social-buttons
- *= require style
- */
+ *= require home_animate.min
+ *= require home_blue
+ *= require home_bootstrap.min
+ *= require home_green
+ *= require home_orange
+ *= require home_pink
+ *= require home_red
+ *= require home_style
+ *= require home_turquoise
+ *= require home_yellow
+*/

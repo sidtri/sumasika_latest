@@ -1,45 +1,47 @@
-
 <!DOCTYPE html>
-<html class="html" lang="en-GB">
- <head>
-  <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+<html>
+<head>
   <title>Sumasika</title>
-  <!-- CSS -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Drew - A Multipurpose Landing Page Template</title>
+  <meta name="author" content="David Rozando">
+  <meta name="keywords" content="responsive, parallax, bootstrap, html5 template, one page, landing page">
+   <meta name="description" content="Drew - A Multipurpose Landing Page Template">
+  <%= stylesheet_link_tag  'homepage', media: 'all', 'data-turbolinks-track' => true %>
+  <!--  <link id="color-css" rel="stylesheet" href="assets/homecss/style.css"> -->
   
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <!--[if lt IE 9]>
-  <script src="scripts/html5shiv.js?4241844378" type="text/javascript"></script>
-  <![endif]-->
-    <!--HTML Widget code-->
-  
-			<!--[if gte IE 8] -->
-				<!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"> -->
-			<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-			<!-- <![endif]-->
-			<!--[if IE 7]>
-				<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
-			<![endif]-->
-			<style>
-				.icon-block:before, .icon-block {
-					display: block;
-				}
-			</style>
-		
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+   <link id="color-css" rel="stylesheet" href="assets/colors/orange.css">
+   
+    
+
  </head>
- <body>
- <%=  render :partial => 'layouts/alert' %>
-	
-	  <%= yield %>
-	  <%= render :partial => 'layouts/footer' %>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
-     jQuery(function($) {
-         $('#dropdownview').click(function () {
-             $('#viewsubmenu').toggle();
-         })
-     });
- </script>
- </body>
+<body class="enable-animations enable-preloader">
+  <div id="document" class="document">
+
+      <%= render :partial=>'layouts/header' %>
+
+          <%= yield %>
+      <%= render :partial=>'layouts/footer'%>
+
+
+  </div>
+
+
+    <script src="assets/jquery-1.11.2.min.js"></script>
+    <script src="assets/picturefill.min.js"></script>
+    <script src="assets/jpreloader.min.js"></script>
+    <script src="assets/bootstrap.min.js"></script>
+    <script src="assets/smoothscroll.min.js"></script>
+    <script src="assets/jquery.nav.min.js"></script>
+    <script src="assets/jquery.inview.min.js"></script>
+    <script src="assets/jquery.counterup.min.js"></script>
+    <script src="assets/jquery.stellar.min.js"></script>
+    <script src="assets/script.js"></script>assets  
+
+</body>
 </html>
