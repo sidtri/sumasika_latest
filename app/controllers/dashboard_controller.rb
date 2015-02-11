@@ -16,7 +16,7 @@ before_action :authenticated
 
   def create
     @synthesize = Synthesize.new(params_permit)
-  	@synthesize.user_id = session[:user_id]
+    @synthesize.user_id = session[:user_id]
   	@synthesize.tokener = SecureRandom.urlsafe_base64 
     @synthesize.status = 'pending'
   	if @synthesize.save
@@ -104,6 +104,6 @@ before_action :authenticated
   end
   private
   	def params_permit
-  		params.permit(:mtn, :money, :first_name, :last_name)
+  		params.permit(:mtn, :money, :first_name, :last_name, :code)
   	end
 end

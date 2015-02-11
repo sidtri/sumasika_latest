@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # My Api
   get 'jsoners/ghana/:currency/:money' => 'jsoners#ghana'
   get 'jsoners/dollars/:currency/:money' => 'jsoners#dollars'
+  get 'jsoners/euro/:currency/:money' => 'jsoners#euro'
   get 'jsoners/sendmsg/:mtn' => 'jsoners#sendmsg'
   get 'jsoners/validator/:mtn' => 'jsoners#valid'
 

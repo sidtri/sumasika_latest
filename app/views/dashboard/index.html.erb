@@ -10,8 +10,8 @@
 		    <h4><b>Amount Details:</b></h4>
 		    <div class="row">
 		    
-		        <div class="col-xs-5">
-		        <div class="form-group">
+		      <div class="col-xs-5">
+		        
 					
                   	  
 				      <div class="form-group">
@@ -23,7 +23,25 @@
   							<dd> 
   								<div class="input-group">
 	                    			<div class="input-group-addon"><%= @symbol %></div>
-	                    				<input type="text" class="form-control" id="money" name='money' style="width:165px" >
+	                    				<input type="text" class="form-control" id="user_money" name='user_money' style="width:165px" >
+	                    		</div>
+	                    	</dd>
+						</dl>	
+	                    
+	                   
+	                  </div>
+	                  <div class="form-group">
+				      	<dl class="dl-horizontal">
+  
+  							<dt>
+  								<label class="" for="money">Pay using </label>
+  							</dt>
+  							<dd> 
+  								<div class="input-group">
+	                    			<input type="radio" name="currency" id="euro" ><lable style="margin-left: 5px;">Euro</lable> &nbsp (or) &nbsp
+	                    			<input type="radio" name="currency" id="usd" ><lable style="margin-left: 5px;">USD
+	                    			</lable>
+	                    				
 	                    		</div>
 	                    	</dd>
 						</dl>	
@@ -31,8 +49,10 @@
 	                   
 	                  </div>
 					
-				</div>
-                    <div>
+					
+				
+
+                    
 				       <div class="form-group">
 				       <dl class="dl-horizontal">
 				       		<dt>
@@ -45,28 +65,50 @@
 	                        
 	                         </div>
                      </dd>
+                     </dl>
                        </div>  
-                    </div>
+                    
                 </div>   
+					<div class="col-xs-1"></div>
+                 <div class="col-xs-4">
 
-                 <div class="col-xs-6">
-		        <div class="form-group">
-					<div class="form-group">
-				      	<dl class="dl-horizontal" style="visibility:hidden">
-  							<dt>
-  								<label class="" for="money"></label>
-  							</dt>
-  							<dd> 
-  								<div class="input-group">
-	                    			<div class="input-group-addon">&#36;</div>
-	                    				<input type="text" class="form-control" id="usdmoney" name='money' style="width:165px" >
-	                    		</div>
-	                    	</dd>
-						</dl>	
-	                </div>
+                 <div class="well">
+                 	
+                    	<dl class="dl-horizontal">
+                    	<dt style="width:43px;margin-top: 10px;">
+		                     <label class="" for="first_name">EURO:</label>
+		                </dt>		
+		                <dd style="margin-left: 50px;">
+		                        
+		                 <input type="text" name="euro" id="euro_money" class="form-control" value="" readonly style="background-color: #fff;border: none;">
+		                 <input type="text" name="money" id="money" class="form-control" value="" style="display:none;">
+		                 <input type="text" name="code" id="code" class="form-control" value="" style="display:none;">
+		  	                          
+		                        
+		                 </dd>
+                         </dl>
+                         
+                    	<dl class="dl-horizontal">
+                    	<dt style="width:40px;margin-top: 10px;">
+		                     <label class="" for="first_name">USD:</label>
+		                </dt>		
+		                <dd style="margin-left: 50px;">
+		                        
+		                  <input type="text" name="usds" id="usd_money" class="form-control" value="" readonly style="background-color: #fff;border: none;">
+		                              
+		                        
+		                 </dd>
+                         </dl>
+                     
+                 </div>
+				
+		       
 					
-				</div>     
-			</div>          
+	              </div>
+					
+			  
+			    
+			  
             </div>
 			<hr>
 			<h4><b>Receipient Details</b> </h4>
@@ -144,7 +186,7 @@
 			</div> -->
 			</div> <!-- Receipient Details -->
       <hr> 
-       <input type="submit" class="btn btn-success pull-right disabled" id="buttonid" value="Next">
+       <input type="submit" class="btn btn-success pull-right disable" id="buttonid" value="Next">
      </div>
 
 </div>
@@ -152,10 +194,10 @@
 <script type="text/javascript">
 $(document).ready(function(){
 
-	$('#money').keyup(function(){
+	$('#user_money').keyup(function(){
 
 		currency = '<%= @currency %>';
-		money = $("#money").val();
+		money = $("#user_money").val();
 		$.ajax({
   			url: "<%=root_url %>jsoners/ghana/" + currency + '/' + money,
   			context: document.body
@@ -165,27 +207,34 @@ $(document).ready(function(){
 		
 
 		$.ajax({
+			url: "<%=root_url %>jsoners/euro/" + currency + '/' + money,
+  			context: document.body
+		}).done(function(r) {
+			// console.log(r);
+			$("#euro_money").val(r);
+			
+		});
 
+		$.ajax({
   			url: "<%=root_url %>jsoners/dollars/" + currency + '/' + money,
   			context: document.body
 		}).done(function(r) {
-
 			//console.log(r);
-			$("#usdmoney").val(r);
+			$("#usd_money").val(r);
 		});
 
 	})
 
 	
 	$( "#verify" ).click(function() {
-
+			currency = '<%= @currency %>';
 			var mtnval= $('#mtn').val();
 			var mtnno = mtnval.split('+')[1]
 			$.ajax({
   			  url: "<%=root_url %>jsoners/validator/"+mtnno,
   			  context: document.body
 			}).done(function(r) {
-				console.log(r);
+				
              	if( r == 'true')
 			 	{
 
@@ -200,6 +249,47 @@ $(document).ready(function(){
 			 			
 			 	}
 			
+		});
+
+	});
+		// ------- convert to euro-------------//
+	$('#euro').click(function(){
+
+		
+		$("#euro_money").css("border","1px solid #4cae4c");
+		$("#usd_money").css("border","");
+
+		
+
+		currency = '<%= @currency %>';
+
+		money = $("#user_money").val();
+		$.ajax({
+			url: "<%=root_url %>jsoners/euro/" + currency + '/' + money,
+  			context: document.body
+		}).done(function(r) {
+			
+			$("#money").val(r);
+			$("#code").val("eur");
+
+			
+		});
+
+	});
+
+	// ------- convert to usd-------------//
+	$('#usd').click(function(){
+		$("#usd_money").css("border","1px solid #4cae4c");
+		$("#euro_money").css("border","");
+		currency = '<%= @currency %>';
+		money = $("#user_money").val();
+		$.ajax({
+  			url: "<%=root_url %>jsoners/dollars/" + currency + '/' + money,
+  			context: document.body
+		}).done(function(r) {
+			
+			$("#money").val(r);
+			$("#code").val("usd");
 		});
 
 	});

@@ -109,18 +109,18 @@ iframe {
 	padding: 20px 0 20px 95px;
 }
 .icon-list-icon {
-	position: absolute;
-	top: 0;
-	left: 0;
-	margin: 20px 0 0 0;
-	width: 70px;
-	height: 70px;
-	border-radius: 50%;
-	font-size: 32px;
-	line-height: 70px;
-	vertical-align: middle;
-	text-align: center;
-	color: #fff;
+position: absolute;
+top: 0;
+left: 0;
+margin: 20px 0 0 0;
+width: 70px;
+height: 70px;
+border-radius: 50%;
+font-size: 32px;
+line-height: 70px;
+vertical-align: middle;
+text-align: center;
+color: #fff;
 }
 .section-accent .icon-list-icon {
 	background-color: #444;
@@ -288,6 +288,7 @@ iframe {
  * FORMS
  * ========================================
  */
+
 .form-heading {
 	position: relative;
 	padding-bottom: 20px;
@@ -387,6 +388,20 @@ iframe {
 	border-color: #3c763d;
 }
 
+.fa {
+display: inline-block;
+font: normal normal normal 14px/1 FontAwesome;
+font-size: inherit;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.bounceIn {
+-webkit-animation-name: bounceIn;
+/*animation-name: bounceIn;*/
+-webkit-animation-duration: .75s;
+/*animation-duration: .75s;*/
+}
 .subscription-form {
 	margin-top: 30px;
 }

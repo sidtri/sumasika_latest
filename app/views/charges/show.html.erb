@@ -31,7 +31,14 @@
                           <tbody>
                             <tr>
                                 <td>You want to send</td>
-                                <td>$ <%= @paymentdetails.money %></td>
+                        <td>
+                        <% if @paymentdetails.code == 'eur'  %> 
+                          &euro;
+                        <% else %> 
+                          $
+                        <% end %> 
+                          <%= @paymentdetails.money %>
+                        </td>
 
                             </tr>
                             <tr>

@@ -9,6 +9,7 @@ class ChargesController < ApplicationController
 		@user = my_session
 		if s.status == 'pending'
 			@money = s.money
+			@code = s.code
 		else
 			render :text => "Your token expired please do recharge with new token"
 		end
@@ -49,11 +50,11 @@ class ChargesController < ApplicationController
 		@paymentdetails=Synthesize.find_by_tokener(params[:token])
 	    mtn = @paymentdetails.mtn
     	@client = Twilio::REST::Client.new 
-    	@request=@client.account.messages.create({
-        	:from => '+15005550006', 
-        	:to => mtn,  
-        	:body => 'Sumasika money transfering initiated on your mobile number' 
-    	})	
+    	#@request=@client.account.messages.create({
+        #	:from => '+15005550006', 
+       # 	:to => mtn,  
+        #	:body => 'Sumasika money transfering initiated on your mobile number' 
+    	#})	
     end
 
 	private

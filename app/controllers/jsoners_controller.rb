@@ -13,6 +13,14 @@ class JsonersController < ApplicationController
   	render json: @usd
   end
 
+  def euro
+    currency = params[:currency]
+    money = params[:money]
+  
+    @euro= GoogCurrency.send("#{params[:currency]}_to_eur",params[:money])
+    render json: @euro
+  end
+
   def sendmsg
     mtn = "+" + params[:mtn]
     @client = Twilio::REST::Client.new 
