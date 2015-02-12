@@ -20,7 +20,10 @@ class ChargesController < ApplicationController
 	  @user = my_session
 	  synthesize = Synthesize.find_by_tokener(params[:tokener])
 	  @amount = synthesize.money * 100
+	  @code = synthesize.code
+	  binding.pry
 	  customer = my_customer
+	  
 	  customer.description = "Testing description need to update"
 	  customer.card = params[:stripeToken] # obtained with Stripe.js
 	  if customer.save
@@ -29,7 +32,7 @@ class ChargesController < ApplicationController
 		    :amount      => @amount.to_i,
 		    :description => 'Rails Stripe customer',
 		    :receipt_email => customer.email,
-		    :currency    => 'usd'
+		    :currency    => @code	
 		  )
 		  Event.create(:customer_id => customer.id, :event_id => charge.id, :synthesize_id => synthesize.id )
 		  synthesize.status = "charged"
