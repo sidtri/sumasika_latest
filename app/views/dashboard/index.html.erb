@@ -10,51 +10,27 @@
 		    <h4><b>Amount Details:</b></h4>
 		    <div class="row">
 		    
-		      <div class="col-xs-5">
-		        
-					
-                  	  
-				      <div class="form-group">
-				      	<dl class="dl-horizontal">
-  
-  							<dt>
-  								<label class="" for="money">You want to send</label>
-  							</dt>
-  							<dd> 
-  								<div class="input-group">
-	                    			<div class="input-group-addon"><%= @symbol %></div>
-	                    				<input type="text" class="form-control" id="user_money" name='user_money' style="width:165px" >
-	                    		</div>
-	                    	</dd>
-						</dl>	
-	                    
-	                   
-	                  </div>
-	                  <div class="form-group">
-				      	<dl class="dl-horizontal">
-  
-  							<dt>
-  								<label class="" for="money">Pay using </label>
-  							</dt>
-  							<dd> 
-  								<div class="input-group">
-	                    			<input type="radio" name="currency" id="euro" ><lable style="margin-left: 5px;">Euro</lable> &nbsp (or) &nbsp
-	                    			<input type="radio" name="currency" id="usd" ><lable style="margin-left: 5px;">USD
-	                    			</lable>
-	                    				
-	                    		</div>
-	                    	</dd>
-						</dl>	
-	                    
-	                   
-	                  </div>
-					
-					
-				
+		      <div class="col-xs-12">
+			      <div class="form-group">
+			      	<dl class="dl-horizontal">
 
-                    
-				       <div class="form-group">
-				       <dl class="dl-horizontal">
+							<dt>
+								<label class="" for="money">You want to send</label>
+							</dt>
+							<dd> 
+								<div class="input-group">
+			                <div class="input-group-btn">
+								<%= select 'user','currency', Synthesize::CURRENCIES, {:selected => 'USD'}, {class: 'form-control'} %>
+							</div>
+                			<input type="text" class="form-control input-xs" id="user_money" name='user[money]' style="width:165px" placeholder='0.00' >
+                    		</div>
+                    	</dd>
+					</dl>	
+                  </div>
+	            </div>   
+				<div class="col-xs-4">
+					  <div class="form-group">
+				        <dl class="dl-horizontal">
 				       		<dt>
                        			<label class="" for="exampleInputAmount">Receipt Receives</label>
                        		</dt>
@@ -64,54 +40,13 @@
 	                           <input type="text" class="form-control" id="gamount" style="width:139px" disabled>
 	                        
 	                         </div>
-                     </dd>
-                     </dl>
-                       </div>  
-                    
-                </div>   
-					<div class="col-xs-1"></div>
-                 <div class="col-xs-4">
-
-                 <div class="well">
-                 	
-                    	<dl class="dl-horizontal">
-                    	<dt style="width:43px;margin-top: 10px;">
-		                     <label class="" for="first_name">EURO:</label>
-		                </dt>		
-		                <dd style="margin-left: 50px;">
-		                        
-		                 <input type="text" name="euro" id="euro_money" class="form-control" value="" readonly style="background-color: #fff;border: none;">
-		                 <input type="text" name="money" id="money" class="form-control" value="" style="display:none;">
-		                 <input type="text" name="code" id="code" class="form-control" value="" style="display:none;">
-		  	                          
-		                        
-		                 </dd>
-                         </dl>
-                         
-                    	<dl class="dl-horizontal">
-                    	<dt style="width:40px;margin-top: 10px;">
-		                     <label class="" for="first_name">USD:</label>
-		                </dt>		
-		                <dd style="margin-left: 50px;">
-		                        
-		                  <input type="text" name="usds" id="usd_money" class="form-control" value="" readonly style="background-color: #fff;border: none;">
-		                              
-		                        
-		                 </dd>
-                         </dl>
-                     
-                 </div>
-				
-		       
-					
-	              </div>
-					
-			  
-			    
-			  
-            </div>
+                     	</dd>
+                     	</dl>
+                     </div>
+				</div>
+			</div>
 			<hr>
-			<h4><b>Receipient Details</b> </h4>
+			<h4><b>Recipient Details</b> </h4>
 
 			<div class="row"> <!-- Receipient details -->
 			<div class="col-xs-5" >		
@@ -124,7 +59,7 @@
 		                </dt>		
 		                <dd>
 		                        <div class="input-group">
-		                           <input type="text" class="form-control" id="first_name" name="first_name" style="width:198px">
+		                           <input type="text" class="form-control" id="first_name" name="user[first_name]" style="width:198px">
 		  	                          
 		                         </div>
 		                 </dd>
@@ -141,7 +76,7 @@
 	                     </dt>
 	                     <dd>
 	                        <div class="input-group">
-	                           <input type="text" class="form-control" id="last_name" name='last_name' style="width:198px">
+	                           <input type="text" class="form-control" id="last_name" name='user[last_name]' style="width:198px">
 	                        </div>
 	                     </dd>
                      </dl>
@@ -152,13 +87,12 @@
                  <div class="form-group">
                   <dl class="dl-horizontal">
                   	<dt>
-	                   <label class="" for="mtn">recipient number</label><br>
+	                   <label class="" for="mtn">Recipient Number</label><br>
 	                   <label> (MTN, TIGO, AIRTEL)</label>
 	                 </dt>
 	                 <dd>
 	                        <div class="input-group">
-	                           <div class="input-group-addon">MTN</div>
-	                           <input type="text" class="form-control" id="mtn" name="mtn" style="width:139px"> 
+	                           <input type="text" class="form-control" id="mtn" name="user[mtn]" style="width:139px"> 
 	                           <a href="javascript:void(0)"  name="verify" id="verify" value="verify" class="btn btn-primary active">
                  	verify
                  </a>
@@ -186,56 +120,42 @@
 			</div> -->
 			</div> <!-- Receipient Details -->
       <hr> 
-       <input type="submit" class="btn btn-success pull-right disabled" id="buttonid" value="Next">
+       <input type="submit" class="btn btn-success pull-right disabled" id="buttonid" value="Preview">
      </div>
 
 </div>
 <%end %>
 <script type="text/javascript">
 $(document).ready(function(){
-
 	$('#user_money').keyup(function(){
-
-		currency = '<%= @currency %>';
-		money = $("#user_money").val();
+		values_taken()
+	});
+	$("#person_currency").change(function(){
+		values_taken()
+	});
+	function values_taken(){
+		money = $('#user_money').val();
+		window.currency = $('#user_currency').val();
+		amount= parseFloat(money);
+		$('#gamount').val('loading...');
 		$.ajax({
-  			url: "<%=root_url %>jsoners/ghana/" + currency + '/' + money,
+  			url: "<%=root_url %>jsoners/ghana/" + currency + '/1',
   			context: document.body
 		}).done(function(r) {
-			$("#gamount").val(r);
-		});
-		
-
-		$.ajax({
-			url: "<%=root_url %>jsoners/euro/" + currency + '/' + money,
-  			context: document.body
-		}).done(function(r) {
-			// console.log(r);
-			$("#euro_money").val(r);
-			
-		});
-
-		$.ajax({
-  			url: "<%=root_url %>jsoners/dollars/" + currency + '/' + money,
-  			context: document.body
-		}).done(function(r) {
-			//console.log(r);
-			$("#usd_money").val(r);
-		});
-
-	})
-
+			window.rate = r;
+			rate = window.rate;
+			$('#gamount').val(amount*rate);
+		}); 
+	}
 	
-	$( "#verify" ).click(function() {
-			currency = '<%= @currency %>';
+	$("#verify").click(function(){
 			var mtnval= $('#mtn').val();
 			var mtnno = mtnval.split('+')[1]
 			$.ajax({
   			  url: "<%=root_url %>jsoners/validator/"+mtnno,
   			  context: document.body
 			}).done(function(r) {
-				
-             	if( r == 'true')
+				if( r == 'true')
 			 	{
 
 			 		$("#mtn").css("border-color", "#3c763d");
@@ -248,52 +168,10 @@ $(document).ready(function(){
 			 		$("#alert").html("Enter mtn mobile number with country code. Eg:: +233 244 2120 125");
 			 			
 			 	}
-			
 		});
 
 	});
-		// ------- convert to euro-------------//
-	$('#euro').click(function(){
-
 		
-		$("#euro_money").css("border","1px solid #4cae4c");
-		$("#usd_money").css("border","");
-
-		
-
-		currency = '<%= @currency %>';
-
-		money = $("#user_money").val();
-		$.ajax({
-			url: "<%=root_url %>jsoners/euro/" + currency + '/' + money,
-  			context: document.body
-		}).done(function(r) {
-			
-			$("#money").val(r);
-			$("#code").val("eur");
-
-			
-		});
-
-	});
-
-	// ------- convert to usd-------------//
-	$('#usd').click(function(){
-		$("#usd_money").css("border","1px solid #4cae4c");
-		$("#euro_money").css("border","");
-		currency = '<%= @currency %>';
-		money = $("#user_money").val();
-		$.ajax({
-  			url: "<%=root_url %>jsoners/dollars/" + currency + '/' + money,
-  			context: document.body
-		}).done(function(r) {
-			
-			$("#money").val(r);
-			$("#code").val("usd");
-		});
-
-	});
-
 
 });
 	

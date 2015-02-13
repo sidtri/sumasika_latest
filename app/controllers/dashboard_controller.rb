@@ -6,8 +6,6 @@ before_action :authenticated
     countryinfo=Country.new(@user['country'])
     @symbol=countryinfo.currency['symbol']
     @currency=countryinfo.currency['code'].downcase 
-
-    # binding.pry
   end
 
   def ghana
@@ -16,6 +14,7 @@ before_action :authenticated
 
   def create
     @synthesize = Synthesize.new(params_permit)
+    @synthesize.code = params_permit['currency']
     @synthesize.user_id = session[:user_id]
   	@synthesize.tokener = SecureRandom.urlsafe_base64 
     @synthesize.status = 'pending'
@@ -75,17 +74,13 @@ before_action :authenticated
             user=User.find_by_token(params[:token])
             user.password=params['newpwd']
             if user.save
-
               redirect_to dashboard_settings_path , :flash => { :notice => "Your password has been changed sucessfully " }
-
             end
           else
              redirect_to dashboard_changepwd_path , :token => params[:token] , :flash => { :error => "Your new and old passwords are doesnot match."}
-          
         end
       else
         redirect_to dashboard_changepwd_path(:token => params[:token]) ,:flash => { :error => "Please check old password once"}
-
      end
      
      
@@ -104,6 +99,6 @@ before_action :authenticated
   end
   private
   	def params_permit
-  		params.permit(:mtn, :money, :first_name, :last_name, :code)
+      params.require(:user).permit(:currency,:money,:first_name,:last_name,:mtn)
   	end
 end

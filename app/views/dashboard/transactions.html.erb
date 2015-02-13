@@ -18,11 +18,15 @@
 				</tr>
 			</thead>
 			<tbody>
-			<% @details.each_with_index do |data, index| %>
+			<% @details.to_enum.with_index.reverse_each do |data, index| %>
 				<tr>
-					<td><a href="<%=dashboard_tbrief_path(data.event.event_id)%>" class='label label-primary'><%=data.event.event_id.truncate(12) %></a></td> 
+					<%if data.status == "pending"%>
+						<td><a href="#" class="label label-danger">Transaction Failed</a></td>
+					<%else%>
+						<td><a href="<%=dashboard_tbrief_path(data.event.event_id)%>" class='label label-primary'><%=data.event.event_id.truncate(12) %></a></td> 
+					<%end%>
 					<td><%= data.first_name.capitalize + " " + data.last_name.capitalize %></td> 
-					<td><%= data.money %>USD → £......... GBP  </td> 
+					<td><%= data.money %> <%=data.currency%> → £......... GBP  </td> 
 					<td><%= data.mtn %></td> 
 					<td>&pound;.........</td> 
 					<td><%= data.created_at.strftime("%x") %> UTC</td> 
@@ -32,7 +36,7 @@
 			<%if @details.blank? %>
 			<tr>
 				<td colspan="5">No previous transactions as per our record</td>
-				<td colspan="2"><a href="<%=dashboard_index_path %>" class='btn  btn-default'>Send money now</a></td>
+				<td colspan="2"><a href="<%=dashboard_index_path %>" class='btn btn-default'>Send money now</a></td>
 			</tr>
 			<%end %>
 			</tbody>		

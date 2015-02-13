@@ -10,6 +10,7 @@ class ChargesController < ApplicationController
 		if s.status == 'pending'
 			@money = s.money
 			@code = s.code
+			@symbol = Country.find_country_by_currency(@code).currency["symbol"]
 		else
 			render :text => "Your token expired please do recharge with new token"
 		end
@@ -21,9 +22,8 @@ class ChargesController < ApplicationController
 	  synthesize = Synthesize.find_by_tokener(params[:tokener])
 	  @amount = synthesize.money * 100
 	  @code = synthesize.code
-	  binding.pry
+	  @symbol = Country.find_country_by_currency(@code).currency["symbol"]
 	  customer = my_customer
-	  
 	  customer.description = "Testing description need to update"
 	  customer.card = params[:stripeToken] # obtained with Stripe.js
 	  if customer.save
@@ -52,7 +52,8 @@ class ChargesController < ApplicationController
 		@user=my_session
 		@paymentdetails=Synthesize.find_by_tokener(params[:token])
 	    mtn = @paymentdetails.mtn
-    	@client = Twilio::REST::Client.new 
+	    @symbol = Country.find_country_by_currency(@paymentdetails.currency).currency["symbol"]
+	    @client = Twilio::REST::Client.new 
     	#@request=@client.account.messages.create({
         #	:from => '+15005550006', 
        # 	:to => mtn,  

@@ -63,12 +63,7 @@
                 <span class="payment-errors text-danger"></span>
                 <div class="row">
                   <div class="col-xs-6">
-                  <% if @code == 'eur' %>
-                    
-                    <input type="submit" value="Make Payment &euro; <%= @money %>" class="btn btn-success">
-                  <% else %>
-                    <%= button_tag "Make Payment ($#{ @money }) ", :class => 'btn btn-success' %>
-                  <% end %>
+                    <%= button_tag "Make Payment (#{@symbol} #{ @money }) ", :class => 'btn btn-success' %>
                   </div>
                 </div>
             <%end %>
