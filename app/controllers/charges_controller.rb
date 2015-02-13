@@ -53,6 +53,8 @@ class ChargesController < ApplicationController
 		@paymentdetails=Synthesize.find_by_tokener(params[:token])
 	    mtn = @paymentdetails.mtn
 	    @symbol = Country.find_country_by_currency(@paymentdetails.currency).currency["symbol"]
+	    @ghana_money = ghana(@paymentdetails)
+	    @ghana_symbol = Country.find_country_by_currency('GHS').currency["symbol"]
 	    @client = Twilio::REST::Client.new 
     	#@request=@client.account.messages.create({
         #	:from => '+15005550006', 
@@ -70,5 +72,10 @@ class ChargesController < ApplicationController
 			flash[:error] = "May be wrong credentials or you've submitted before page fully loaded"
 			redirect_to :controller => 'charges', :action => 'index', :token => params[:tokener]
 		  end
+		end
+		def ghana(details)
+			currency = details.currency
+			money = details.money
+			@ghs= GoogCurrency.send("#{currency}_to_ghs",money)
 		end
 end

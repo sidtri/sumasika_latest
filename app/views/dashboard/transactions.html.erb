@@ -26,9 +26,9 @@
 						<td><a href="<%=dashboard_tbrief_path(data.event.event_id)%>" class='label label-primary'><%=data.event.event_id.truncate(12) %></a></td> 
 					<%end%>
 					<td><%= data.first_name.capitalize + " " + data.last_name.capitalize %></td> 
-					<td><%= data.money %> <%=data.currency%> → £......... GBP  </td> 
+					<td><%= data.money %> <%=data.currency%> → <%=GoogCurrency.send("#{data.currency}_to_ghs",data.money) %> GBP  </td> 
 					<td><%= data.mtn %></td> 
-					<td>&pound;.........</td> 
+					<td><%= data.money*0.05 %> <%=data.currency%></td> 
 					<td><%= data.created_at.strftime("%x") %> UTC</td> 
 					<td>..........</td> 	
 				</tr>

@@ -39,26 +39,25 @@
                             </tr>
                             <tr>
                                 <td>GHS</td>
-                                <td>....</td>
+                                <td><%= @ghana_symbol%> <%= @ghana_money %></td>
 
                             </tr>
                             <tr>
-                                <td>Receipt Receives</td>
-                                <td>....</td>
-
+                                <td>Recipient Receives</td>
+                                <td><%= @ghana_money*0.95 %> ( 5% Deduction )</td>
                             </tr>
                             <tr>
-                                <td>Receipt First Name</td>
+                                <td>Recipient First Name</td>
                                 <td><%= @paymentdetails.first_name %></td>
 
                             </tr>
                             <tr>
-                                <td>Receipt Last Name</td>
+                                <td>Recipient Last Name</td>
                                 <td><%= @paymentdetails.last_name %></td>
 
                             </tr>
                             <tr>
-                                <td>Receipt MTN Number</td>
+                                <td>Recipient MTN Number</td>
                                 <td><%= @paymentdetails.mtn %></td>
 
                             </tr>
