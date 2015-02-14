@@ -6,6 +6,7 @@ before_action :authenticated
     countryinfo=Country.new(@user['country'])
     @symbol=countryinfo.currency['symbol']
     @currency=countryinfo.currency['code'].downcase 
+    @dashboard = 'active'
   end
 
   def ghana
@@ -27,7 +28,8 @@ before_action :authenticated
 
   def transactions
     @user=my_session
-    @details = my_session.synthesizes
+    @details = my_session.synthesizes.includes(:event)
+    @transactions = 'active'
   end	
 
   def transactions_brief

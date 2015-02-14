@@ -1,13 +1,10 @@
 <%= form_tag dashboard_create_path, :id => 'send_money', :class => 'form-inline' do %>
 <div class="panel panel-default">
-	<div class="panel-heading">
-	      <h3 class="panel-title">
-	         <span class="glyphicon glyphicon-usd"></span>
-	      </h3>
+	<div class="panel-heading base-background">
 	      <h3>Send Money To Any One</h3>
 	</div>
 	<div class="panel-body" style="text-align:cener">
-		    <h4><b>Amount Details:</b></h4>
+		    <h4 class="base-color text-glow"><b>Amount Details:</b></h4>
 		    <div class="row">
 		    
 		      <div class="col-xs-12">
@@ -45,7 +42,7 @@
 				</div>
 			</div>
 			<hr>
-			<h4><b>Recipient Details</b> </h4>
+			<h4 class="base-color text-glow"><b>Recipient Details</b> </h4>
 
 			<div class="row"> <!-- Receipient details -->
 			<div class="col-xs-5" >		
@@ -58,9 +55,8 @@
 		                </dt>		
 		                <dd>
 		                        <div class="input-group">
-		                           <input type="text" class="form-control" id="first_name" name="user[first_name]" style="width:198px">
-		  	                          
-		                         </div>
+		                           <input type="text" class="form-control" id="first_name" name="user[first_name]" style="width:198px" placeholder='Eg:: John'>
+		  	                     </div>
 		                 </dd>
                          </dl>
                      </div>
@@ -75,14 +71,14 @@
 	                     </dt>
 	                     <dd>
 	                        <div class="input-group">
-	                           <input type="text" class="form-control" id="last_name" name='user[last_name]' style="width:198px">
+	                           <input type="text" class="form-control" id="last_name" name='user[last_name]' style="width:198px" placeholder='Doe'>
 	                        </div>
 	                     </dd>
                      </dl>
                     </div>
 			</div>
 
-			<div class="col-xs-6">				        
+			<div class="col-xs-12">				        
                  <div class="form-group">
                   <dl class="dl-horizontal">
                   	<dt>
@@ -91,7 +87,7 @@
 	                 </dt>
 	                 <dd>
 	                        <div class="input-group">
-	                           <input type="text" class="form-control" id="mtn" name="user[mtn]" style="width:139px"> 
+	                           <input type="text" class="form-control" id="mtn" name="user[mtn]" style="width:139px" placeholder='+233 244 2120 125'> 
 	                           <a href="javascript:void(0)"  name="verify" id="verify" value="verify" class="btn btn-primary active">
                  	verify
                  </a>

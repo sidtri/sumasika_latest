@@ -70,7 +70,7 @@
      <div class="col-xs-2">
        <ul id="dashboard-menu">
           <ul class="nav" style="height:25em;"><!-- 'tabs-right' for right tabs -->
-                <li>
+                <li class="<%=@dashboard %>">
                   <!-- <a href="#home" style=" border-bottom: 1px solid #E6E6E6;">  </a> -->
               <% # link_to '<span class="glyphicon glyphicon-random" style="padding-right:10px;"></span>
              # <span>Send Money</span>' , charges_path , :style => 'border-bottom: 1px solid #E6E6E6' %>
@@ -81,7 +81,7 @@
                    <span>Send Money</span>
         <% end %>
                 </li>
-                <li>
+                <li class="<%=@transactions %>">
                   <a href="<%= dashboard_transactions_path %>" style="border-bottom: 1px solid #E6E6E6;">
                     <span class="glyphicon glyphicon-repeat" style="padding-right: 10px;"></span><span>Transactions</span>
                   </a>
@@ -89,6 +89,7 @@
                 <li><a href="#messages" style=" border-bottom: 1px solid #E6E6E6;">
                   <span class="glyphicon glyphicon-ok"style="padding-right: 10px;"></span><span>Verification</span></a></li>
                 <li><a href="<%=dashboard_settings_path %>" ><span class="glyphicon glyphicon-cog" style="padding-right: 10px;"></span><span>Settings</span></a></li>
+                <li><a href=""></a></li>
           </ul>
        </div>    
      <div class="col-xs-10">
