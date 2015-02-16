@@ -44,7 +44,7 @@
                             </tr>
                             <tr>
                                 <td>Recipient Receives</td>
-                                <td><%= @ghana_money*0.95 %> ( 5% Deduction )</td>
+                                <td><%= @ghana_symbol%> <%= @ghana_money*(100- @paymentdetails.rate)*0.01  %> ( 5% Deduction )</td>
                             </tr>
                             <tr>
                                 <td>Recipient First Name</td>

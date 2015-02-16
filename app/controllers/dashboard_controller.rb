@@ -15,11 +15,15 @@ before_action :authenticated
 
   def create
     @synthesize = Synthesize.new(params_permit)
+    @synthesize.rate = 5.0 # need to change later
     @synthesize.code = params_permit['currency']
     @synthesize.user_id = session[:user_id]
   	@synthesize.tokener = SecureRandom.urlsafe_base64 
     @synthesize.status = 'pending'
-  	if @synthesize.save
+    unless params_permit[:apply_charges] == "true"
+      @synthesize.money = @synthesize.money * (100 + @synthesize.rate) * 0.01
+    end
+    if @synthesize.save
   		redirect_to :controller => :charges, :action => :checkdetails, :token => @synthesize.tokener
   	else
   		render :text => 'Something went wrong'
@@ -101,6 +105,6 @@ before_action :authenticated
   end
   private
   	def params_permit
-      params.require(:user).permit(:currency,:money,:first_name,:last_name,:mtn)
+      params.require(:user).permit(:currency,:apply_charges, :money,:first_name,:last_name,:mtn)
   	end
 end
