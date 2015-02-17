@@ -38,7 +38,7 @@ class ChargesController < ApplicationController
 		  synthesize.status = "charged"
 		  synthesize.save
 	   else
-	   	synthesize.status = "expired"
+	   	# synthesize.status = "expired"
 	   	redirect_to dashboard_index_path, :error => "Something went wrong - Maybe wrong credentials"
 	   end
 

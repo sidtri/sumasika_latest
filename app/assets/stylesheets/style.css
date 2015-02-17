@@ -623,10 +623,10 @@ box-shadow: 0 0 1px rgba(0,0,0,0.15) inset;
     text-align:left;
 }
 .base-color{
-    color: #D7C369;
+    color: #9E8C3C;
 }
 .base-background{
-    background: url(http://www.freegreatpicture.com/files/191/20080-big-wave-pattern-background.jpg);
+    background: url(/assets/patblue.jpg);
     color: white;
     font-weight: 600;
     text-transform: uppercase;
