@@ -1,0 +1,394 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"find",
+				"find_country_by_currency"
+			],
+			[
+				"val",
+				"values_taken"
+			],
+			[
+				"person",
+				"person_currency"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 96.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"installp",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Project: Add Folder"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/sid/sites/sidonror/Gemfile",
+		"/home/sid/sites/sumasika_latest/app/views/dashboard/verifications.html.erb",
+		"/home/sid/sites/sumasika_latest/app/controllers/dashboard_controller.rb",
+		"/home/sid/sites/sumasika_latest/config/database.yml",
+		"/home/sid/sites/sumasika_latest/app/controllers/charges_controller.rb",
+		"/home/sid/sites/sumasika_latest/Gemfile",
+		"/home/sid/sites/sumasika_latest/app/views/dashboard/transactions.html.erb",
+		"/home/sid/sites/sumasika_latest/app/views/layouts/dashboard.html.erb",
+		"/home/sid/sites/sumasika_latest/app/assets/stylesheets/style.css",
+		"/home/sid/sites/sumasika_latest/app/assets/stylesheets/admin.css",
+		"/home/sid/sites/sumasika_latest/app/assets/stylesheets/fonts/RJMlAoFXXQEzZoMSUteGWFtXRa8TVwTICgirnJhmVJw.woff2",
+		"/home/sid/sites/sumasika_latest/config/initializers/inflections.rb",
+		"/home/sid/sites/sumasika_latest/test/models/synthesize_test.rb",
+		"/home/sid/sites/sumasika_latest/bin/setup",
+		"/home/sid/sites/sumasika_latest/app/views/charges/show.html.erb",
+		"/home/sid/sites/sumasika_latest/app/views/dashboard/settings.html.erb",
+		"/home/sid/sites/sumasika_latest/app/assets/stylesheets/fonts/glyphicons-halflings-regular.svg",
+		"/home/sid/sites/sumasika_latest/app/views/dashboard/index.html.erb",
+		"/home/sid/sites/sumasika_latest/app/views/charges/index.html.erb",
+		"/home/sid/sites/sumasika_latest/config/environments/test.rb",
+		"/home/sid/sites/sumasika_latest/app/views/charges/create.html.erb",
+		"/home/sid/sites/sumasika_latest/app/models/synthesize.rb",
+		"/home/sid/sites/sumasika_latest/config/initializers/stripe.rb",
+		"/home/sid/sites/sumasika_latest/config.ru",
+		"/home/sid/sites/sumasika_latest/app/controllers/jsoners_controller.rb",
+		"/home/sid/sites/sumasika_latest/app/assets/javascripts/jsoners.coffee",
+		"/home/sid/sites/sumasika_latest/app/assets/javascripts/dashboard.coffee",
+		"/home/sid/sites/mbanumberscms/config/initializers/inflections.rb",
+		"/home/sid/sites/mbanumberscms/tmp/cache/assets/development/sass/892fe86dde2cfc943429b3cb3608ff541a4fa100/homepage.scssc",
+		"/home/sid/sites/mbanumberscms/vendor/extensions/announcements/app/views/refinery/announcements/announcements/show.html.erb",
+		"/home/sid/sites/mbanumberscms/vendor/extensions/announcements/spec/spec_helper.rb",
+		"/home/sid/sites/mbanumberscms/db/migrate/20150203084340_create_refinerycms_authentication_schema.refinery_authentication.rb",
+		"/home/sid/sites/mbanumberscms/db/migrate/20150203084341_add_slug_to_refinery_users.refinery_authentication.rb",
+		"/home/sid/sites/mbanumberscms/config/database.yml",
+		"/home/sid/sites/mbanumberscms/tmp/cache/assets/development/sprockets/ad584c2c3e147f2dd0e4b0c6072ece37",
+		"/home/sid/sites/mbanumberscms/app/helpers/schools_helper.rb",
+		"/home/sid/sites/mbanumberscms/test/fixtures/schools.yml",
+		"/home/sid/sites/mbanumberscms/app/models/school.rb",
+		"/home/sid/sites/mbanumberscms/app/controllers/schools_controller.rb",
+		"/home/sid/sites/mbanumberscms/config/secrets.yml",
+		"/home/sid/sites/mbanumberscms/app/views/topics/new.html.erb",
+		"/home/sid/sites/mbanumberscms/app/models/forum.rb",
+		"/home/sid/sites/mbanumberscms/app/models/topic.rb",
+		"/home/sid/sites/mbanumberscms/app/models/post.rb",
+		"/home/sid/sites/mbanumberscms/app/controllers/forums_controller.rb",
+		"/home/sid/sites/mbanumberscms/app/views/forums/index.html.erb",
+		"/home/sid/sites/mbanumberscms/app/views/forums/show.html.erb",
+		"/home/sid/sites/mbanumberscms/config/routes.rb",
+		"/home/sid/sites/mbanumberscms/app/views/topics/_form.html.erb",
+		"/home/sid/sites/mbanumberscms/app/views/layouts/_footer.html.erb",
+		"/home/sid/sites/mbanumberscms/db/migrate/20150212101052_add_forum_id_to_topics.rb",
+		"/home/sid/sites/mbanumberscms/db/migrate/20150203084347_remove_image_ext_from_refinery_images.refinery_images.rb",
+		"/home/sid/sites/mbanumberscms/app/views/homepage/_announcements.html.erb",
+		"/home/sid/sites/mbanumberscms/app/views/forums/Untitled Document",
+		"/home/sid/sites/mbanumberscms/public/robots.txt",
+		"/home/sid/sites/mbanumberscms/test/fixtures/forums.yml",
+		"/home/sid/sites/mbanumberscms/app/assets/images/Certificate/goodlayers-lms2/framework/plugin-option.php",
+		"/home/sid/sites/mbanumberscms/config/initializers/omniauth.rb",
+		"/home/sid/sites/mbanumberscms/app/assets/images/Certificate/goodlayers-lms2/framework/plugin-option/statement.php",
+		"/home/sid/sites/mbanumberscms/vendor/extensions/announcements/app/views/refinery/announcements/admin/announcements/_sortable_list.html.erb",
+		"/home/sid/sites/mbanumberscms/app/assets/images/Certificate/goodlayers-lms2/user/scoring-status.php",
+		"/home/sid/sites/mbanumberscms/app/assets/images/Certificate/goodlayers-lms2/include/instructor-item.php",
+		"/home/sid/sites/mbanumberscms/app/assets/images/Certificate/goodlayers-lms2/user/free-onsite.php",
+		"/home/sid/sites/mbanumberscms/Gemfile",
+		"/home/sid/sites/mbanumberscms/app/views/user_mailer/support_email.html.erb",
+		"/home/sid/sites/mbanumberscms/config/initializers/session_store.rb",
+		"/home/sid/sites/mbanumberscms/app/assets/javascripts/sessions.coffee",
+		"/home/sid/sites/mbanumberscms/app/assets/images/Certificate/goodlayers-lms2/single-course-content.php",
+		"/home/sid/sites/mbanumberscms/app/assets/stylesheets/font/IQHow_FEYlDC4Gzy_m8fcoWiMMZ7xLd792ULpGE4W_Y.woff2",
+		"/home/sid/sites/mbanumberscms/app/views/layouts/_logo_with_mobile_menu.html.erb",
+		"/home/sid/sites/mbanumberscms/config/initializers/wrap_parameters.rb",
+		"/home/sid/sites/mbanumberscms/app/assets/javascripts/gdlr-edit-box.js",
+		"/home/sid/sites/mbanumberscms/app/assets/images/Certificate/goodlayers-lms2/framework/meta-template.php",
+		"/home/sid/sites/mbanumberscms/config/environments/test.rb",
+		"/home/sid/sites/mbanumberscms/tmp/cache/assets/development/sprockets/10ea72708857aac7c07e984215661449",
+		"/home/sid/sites/mbanumberscms/.git/config",
+		"/home/sid/sites/mbanumberscms/app/controllers/homepage_controller.rb",
+		"/home/sid/sites/mbanumberscms/app/assets/javascripts/gdlr-admin-panel-html.js",
+		"/home/sid/sites/mbanumberscms/app/helpers/members_helper.rb",
+		"/home/sid/sites/mbanumberscms/app/assets/javascripts/homepage.coffee",
+		"/home/sid/sites/mbanumberscms/app/views/homepage/index.html.erb",
+		"/home/sid/sites/mbanumberscms/Rakefile"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"expired",
+			"#D7C369",
+			"Receipt",
+			"USD",
+			",[",
+			"bif",
+			":",
+			"<li>"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "fontawesome-webfont.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"routes",
+				"config/routes.rb"
+			],
+			[
+				"gemfile",
+				"Gemfile"
+			],
+			[
+				"databa",
+				"config/database.yml"
+			],
+			[
+				"gemfilke",
+				"Gemfile.lock"
+			],
+			[
+				"style",
+				"app/assets/stylesheets/style.css"
+			],
+			[
+				"dashindex",
+				"app/views/dashboard/index.html.erb"
+			],
+			[
+				"charges",
+				"app/controllers/charges_controller.rb"
+			],
+			[
+				"dashb",
+				"app/controllers/dashboard_controller.rb"
+			],
+			[
+				"dashbindex",
+				"app/views/dashboard/index.html.erb"
+			],
+			[
+				"dashboaindex",
+				"app/views/dashboard/index.html.erb"
+			],
+			[
+				"chargescont",
+				"app/controllers/charges_controller.rb"
+			],
+			[
+				"dacon",
+				"app/controllers/dashboard_controller.rb"
+			],
+			[
+				"dashcont",
+				"app/controllers/dashboard_controller.rb"
+			],
+			[
+				"transactions",
+				"app/views/dashboard/transactions.html.erb"
+			],
+			[
+				"database",
+				"config/database.yml"
+			],
+			[
+				"chargescon",
+				"app/controllers/charges_controller.rb"
+			],
+			[
+				"jsonerscont",
+				"app/controllers/jsoners_controller.rb"
+			],
+			[
+				"dashboardcont",
+				"app/controllers/dashboard_controller.rb"
+			],
+			[
+				"dashboardine",
+				"app/views/dashboard/index.html.erb"
+			],
+			[
+				"schoolsprofile",
+				"app/views/schools/profile.html.erb"
+			],
+			[
+				"topcont",
+				"app/controllers/topics_controller.rb"
+			],
+			[
+				"_form",
+				"app/views/topics/_form.html.erb"
+			],
+			[
+				"rotues",
+				"config/routes.rb"
+			],
+			[
+				"forums",
+				"app/controllers/forums_controller.rb"
+			],
+			[
+				"forumsconto",
+				"app/controllers/forums_controller.rb"
+			],
+			[
+				"post",
+				"app/models/post.rb"
+			],
+			[
+				"topic",
+				"app/models/topic.rb"
+			],
+			[
+				"forum",
+				"app/models/forum.rb"
+			],
+			[
+				"gemifl",
+				"Gemfile"
+			],
+			[
+				"data",
+				"config/database.yml"
+			],
+			[
+				"homepagecont",
+				"app/controllers/homepage_controller.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 208.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
