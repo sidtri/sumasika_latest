@@ -15,4 +15,6 @@
  *= require font
  *= require social-buttons
  *= require style
+ *= require nprogress
+ *= require nprogress-bootstrap
  */

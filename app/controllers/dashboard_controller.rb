@@ -94,7 +94,7 @@ before_action :authenticated
   ################## token expired for checkdetails cancel####################
   def expired
 
-    @status=Synthesize.find_by_tokener(params[:token]).update(:status => 'expired')
+    @status=Synthesize.find_by_tokener(params[:token]).update(:status => 'pending')
     if @status
       redirect_to dashboard_index_path
     else

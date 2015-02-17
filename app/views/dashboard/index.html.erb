@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/assets/switch_style.css">
+
 <%= form_tag dashboard_create_path, :id => 'send_money', :class => 'form-inline' do %>
 <div class="panel panel-default">
 	<div class="panel-heading base-background">
@@ -25,7 +27,7 @@
 					</dl>	
                   </div>
 	            </div>   
-				<div class="col-xs-4">
+				<div class="col-xs-6">
 					  <div class="form-group">
 				        <dl class="dl-horizontal">
 				       		<dt>
@@ -40,49 +42,56 @@
                      	</dl>
                      </div>
 				</div>
-				<div class="col-xs-9">
-					  <div class="form-group">
+				<div class="col-xs-6">
+					  
 				        <dl class="dl-horizontal">
 				       		<dt>
-                       			<label class="" for="exampleInputAmount">Include Transaction Fees</label>
+                       			<label class="" for="exampleInputAmount">Include Tx Fees</label>
                        		</dt>
                        		<dd>
 	                           <div class="input-group">
-	                        <select name="user[apply_charges]" id="apply_charges" class="form-control">
-	                           		<option value="true">Yes</option>
-	                           		<option value="false">No</option>
-	                           </select> 
-	                           
-	                        </div>
-                     	</dd>
-                     	</dl>
+	              					<div class="switch">
+	              					    <input type="radio" class="switch-input" name="user[apply_charges]" value="true" id="week2">
+	              					    <label for="week2" class="switch-label switch-label-off" style="color:#FFF;"><strong>YES</strong></label>
+	              					    <input type="radio" class="switch-input" name="user[apply_charges]" value="false" id="month2" checked>
+	              					    <label for="month2" class="switch-label switch-label-on" style="color:#FFF;">NO</label>
+	              					    <span class="switch-selection"></span>
+	              					</div>          	 
+	                           </div>
+	                        </dd>
+	                    </dl>
                      	<div style="width:100%;margin-left:180px;">
                      	<span id="help" style="color:red;display:none;">we get 5% of money from your account</span>
                      	</div>
-                     </div>
-				</div>
-			</div>
+                </div>
+                <div class="col-xs-6">
+                	<p class="help-block well">
+                		Transaction charges apply for each transaction. If you wish to transfer money including transaction charges, choose YES . <br>
+                		Eg:: Send money :: $20 <br>
+                			 Tx Fees :: 5% ($1)<br>
+                			 Include Tx Fee :: No<br>
+                			 Charge :: $21
+					</p>
+                </div>
+            </div>
 			<hr>
 			<h4 class="base-color text-glow"><b>Recipient Details</b> </h4>
 
 			<div class="row"> <!-- Receipient details -->
 			<div class="col-xs-5" >		
-			
-
-                    <div class="form-group">
-                    	<dl class="dl-horizontal">
-                    	<dt>
-		                     <label class="" for="first_name">First Name</label>
-		                </dt>		
-		                <dd>
-		                        <div class="input-group">
-		                           <input type="text" class="form-control" id="first_name" name="user[first_name]" style="width:198px" placeholder='Eg:: John'>
-		  	                     </div>
-		                 </dd>
-                         </dl>
-                     </div>
-            
-				
+                <div class="form-group">
+                	<dl class="dl-horizontal">
+                	<dt>
+	                     <label class="" for="first_name">First Name</label>
+	                </dt>		
+	                <dd>
+                        <div class="input-group">
+                           <input type="text" class="form-control" id="first_name" name="user[first_name]" style="width:198px" placeholder='Eg:: John'>
+	                 	<span class="help-block">This helps at verification</span>
+                         </div>
+	                 </dd>
+                     </dl>
+                 </div>
 			</div>
 			<div class="col-xs-6">				
                     <div class="form-group">
@@ -116,7 +125,7 @@
 
 	                        </div>
 
-
+						<span class='help-block'>Provide Mtn number with country code and click on verify</span>
 	                  </dd>
 	                 </dl>
 	             </div>

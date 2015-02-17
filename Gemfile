@@ -55,3 +55,4 @@ gem 'goog_currency'
 gem 'pry-rails', :group => :development
 gem 'twilio-ruby', '~> 3.12'
 gem 'phonelib'
+gem 'nprogress-rails'
